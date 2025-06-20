@@ -85,34 +85,76 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <h6 class="fw-bold text-success">What are Growing Degree Days (GDD)?</h6>
-            <p class="text-muted small mb-2">GDD measure heat accumulation above a base temperature to predict pest and disease development. Each pest has specific GDD thresholds for different life stages.</p>
+            <p class="text-muted small mb-2">Growing Degree Days (GDD) are a measure of heat accumulation above a base temperature that drives biological development. Each pest and disease has specific temperature thresholds and GDD requirements for different life stages. GDD models predict when pests will reach critical development stages, allowing for precise timing of management interventions.</p>
+            <p class="text-muted small mb-2"><strong>Why GDD Matter:</strong> Temperature is the primary driver of biological development. By tracking heat accumulation, we can predict pest development more accurately than calendar dates, which vary significantly with weather conditions.</p>
           </div>
           <div class="col-md-6 mb-3">
-            <h6 class="fw-bold text-success">How to Interpret the Data</h6>
-            <ul class="text-muted small mb-0">
-              <li><strong>Current Growth Stage:</strong> Shows where your pest is in its development cycle</li>
-              <li><strong>All Growth Stages:</strong> Expand to see the complete progression</li>
-              <li><strong>Chart:</strong> Visualizes GDD accumulation over time</li>
-              <li><strong>Risk Level:</strong> Indicates infection risk based on current conditions</li>
-            </ul>
+            <h6 class="fw-bold text-success">The Science Behind GDD</h6>
+            <p class="text-muted small mb-2">GDD are calculated daily using the formula: GDD = ((Tmax + Tmin) / 2) - Tbase, where Tmax and Tmin are daily temperature extremes, and Tbase is the minimum temperature required for development. Values below zero are set to zero. These daily values are accumulated over time to track development progress.</p>
+            <p class="text-muted small mb-0"><strong>Key Benefits:</strong> GDD models provide more accurate predictions than calendar-based systems, reduce unnecessary treatments, optimize timing for maximum efficacy, and support integrated pest management (IPM) strategies.</p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
             <h6 class="fw-bold text-success">Setting Up Your Analysis</h6>
             <ol class="text-muted small mb-0">
-              <li><strong>Select Farm/Paddock:</strong> Choose your location</li>
-              <li><strong>Choose Pest/Disease:</strong> Select the specific pest you're monitoring</li>
-              <li><strong>Set Biofix Date:</strong> <span class="text-success fw-bold">CRITICAL</span> - Enter the date when pest activity first began (e.g., first adult emergence). This is the starting point for all GDD calculations.</li>
+              <li><strong>Select Farm/Paddock:</strong> Choose your target farm and paddock from the dropdown menus.</li>
+              <li><strong>Choose Pest/Disease:</strong> Select the specific pest or disease you want to monitor.</li>
+              <li><strong>Set Biofix Date:</strong> <span class="text-success fw-bold">CRITICAL</span> - Enter the date when pest activity first began. This is the starting point for all GDD calculations. Biofix guidance is provided in the "About the Model" section once a pest is selected.</li>
             </ol>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h6 class="fw-bold text-success">Understanding Your Results</h6>
+            <ul class="text-muted small mb-0">
+              <li><strong>Current Growth Stage:</strong> Shows exact pest development stage and percentage completion</li>
+              <li><strong>GDD Values:</strong> Today's GDD, accumulated GDD, and the GDD range for current stage</li>
+              <li><strong>Next Stage:</strong> Predicts when the pest will reach the next development phase</li>
+              <li><strong>Risk Level:</strong> Indicates infection/pest pressure risk based on current conditions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <h6 class="fw-bold text-success">Using the GDD Chart</h6>
+            <p class="text-muted small mb-2">The chart displays accumulated GDD over the selected period. The line shows the total heat accumulation, helping you visualize development trends and predict future stages. Use this to:</p>
+            <ul class="text-muted small mb-0">
+              <li>Track development progress over time</li>
+              <li>Identify periods of rapid or slow development</li>
+              <li>Plan treatments based on predicted stage transitions</li>
+              <li>Compare current year to historical patterns</li>
+            </ul>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h6 class="fw-bold text-success">All Growth Stages Overview</h6>
+            <p class="text-muted small mb-2">Expand this section to see the complete pest lifecycle with GDD requirements for each stage. Each stage shows:</p>
+            <ul class="text-muted small mb-0">
+              <li>Stage name and description</li>
+              <li>GDD range required for that stage</li>
+              <li>Current status (Upcoming, Current, or Completed)</li>
+              <li>Management implications for each stage</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <h6 class="fw-bold text-success">Biological Recommendations</h6>
+            <p class="text-muted small mb-2">Based on your selected pest type, the tool recommends specific biological products that target your pest. Each product card includes:</p>
+            <ul class="text-muted small mb-0">
+              <li>Active microbial ingredients and their functions</li>
+              <li>Key benefits and mode of action</li>
+              <li>Recommended application rates by crop type</li>
+              <li>Microbial food requirements for optimal performance</li>
+              <li>Application notes and timing considerations</li>
+            </ul>
           </div>
           <div class="col-md-6 mb-3">
             <h6 class="fw-bold text-success">Making Management Decisions</h6>
             <ul class="text-muted small mb-0">
-              <li>Use the <strong>Current Stage</strong> to time treatments</li>
-              <li>Monitor <strong>Risk Level</strong> for treatment urgency</li>
-              <li>Check <strong>Biological Recommendations</strong> for product suggestions</li>
-              <li>Review the <strong>Chart</strong> to see development trends</li>
+              <li><strong>Treatment Timing:</strong> Use current stage and next stage predictions to time treatments for maximum efficacy</li>
+              <li><strong>Risk Assessment:</strong> Monitor risk level - high risk may require immediate action</li>
+              <li><strong>Product Selection:</strong> Choose from recommended biological products based on your pest type</li>
+              <li><strong>Monitoring Schedule:</strong> Increase monitoring frequency during high-risk periods</li>
+              <li><strong>Record Keeping:</strong> Document biofix dates and treatment applications for future reference</li>
             </ul>
           </div>
         </div>
@@ -120,7 +162,14 @@
           <div class="d-flex align-items-start">
             <span class="material-icons me-2">info</span>
             <div class="small">
-              <strong>Pro Tip:</strong> <span class="fw-bold">The biofix date is the most critical setting</span> - this determines when GDD accumulation begins and affects all predictions. Set your biofix date accurately based on when you first observed the pest or when a specific biological event occurred (like first adult emergence or first egg laying). Click the "How to Set" button next to the biofix field for detailed guidance.
+              <strong>Pro Tips:</strong> 
+              <ul class="mb-0 mt-1">
+                <li><span class="fw-bold">Biofix accuracy is crucial</span> - even a few days' error can significantly impact predictions</li>
+                <li>Combine GDD predictions with field scouting for best results</li>
+                <li>Use the chart to identify weather patterns that accelerate or delay development</li>
+                <li>Consider local microclimate effects that may differ from regional weather data</li>
+                <li>Record your biofix dates and treatment applications to improve future predictions</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -128,76 +177,72 @@
     </div>
 
     <!-- Filters (Farm/Paddock, GDD Base, Pest, Biofix) -->
-    <div class="mb-4 bg-white p-3 rounded-4 shadow-sm d-flex flex-wrap gap-2 align-items-center">
-      <label for="farmSelect" class="form-label mb-0 me-2">Farm:</label>
-      <select id="farmSelect" class="form-select w-auto me-3">
+    <div class="mb-4 bg-white p-3 rounded-4 shadow-sm d-flex flex-nowrap gap-2 align-items-center">
+      <label for="farmSelect" class="form-label mb-0">Farm:</label>
+      <select id="farmSelect" class="form-select w-auto">
         <option value="1">Nutrition Farms Yandina</option>
         <option value="2">South Farm</option>
       </select>
-      <label for="paddockSelect" class="form-label mb-0 me-2">Paddock:</label>
-      <select id="paddockSelect" class="form-select w-auto me-3">
+      <label for="paddockSelect" class="form-label mb-0">Paddock:</label>
+      <select id="paddockSelect" class="form-select w-auto">
         <option value="1">Ginger Paddock</option>
       </select>
-      <label for="pestSelect" class="form-label mb-0 me-2">Pest/Disease:</label>
-      <select id="pestSelect" class="form-select w-auto me-3">
-        <option value="ascospore">Apple Scab</option>
-        <option value="other">Other Pest</option>
+      <label for="pestSelect" class="form-label mb-0">Pest/Disease:</label>
+      <select id="pestSelect" class="form-select w-auto">
+        <option value="ascospore">Apple Scab (Fungal)</option>
+        <option value="lightBrownAppleMoth">Light Brown Apple Moth (Insect)</option>
       </select>
-      <div class="d-flex align-items-center">
-        <label for="biofixFrom" class="form-label mb-0 me-2">
-          <span class="fw-bold text-success">Biofix Date:</span>
-          <span class="material-icons info-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="The biofix date is when GDD accumulation begins. This is typically the date of first adult emergence, first egg laying, or another key biological event. Setting this correctly is crucial for accurate predictions.">info</span>
-        </label>
-        <input type="date" id="biofixFrom" class="form-control w-auto me-2">
-        <button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#biofixModal">
-          <span class="material-icons">help</span> How to Set
-        </button>
-      </div>
+      <label for="biofixFrom" class="form-label mb-0 ms-auto text-success fw-bold">Biofix Date:</label>
+      <input type="date" id="biofixFrom" class="form-control w-auto" value="2025-06-01">
+      <span class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="Click to learn how to set the Biofix date. This is the starting point for GDD calculations and is crucial for accuracy.">
+        <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#biofixModal" style="text-decoration: none;">
+          <span class="material-icons" style="vertical-align: middle;">info</span>
+        </a>
+      </span>
     </div>
 
-    <!-- Apple Scab Info Card (collapsible, only for Apple Scab) -->
-    <div id="appleScabInfoCard" class="mb-4" style="display:none;">
-      <div class="card border-0 shadow-sm rounded-4">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-2">
-            <span class="material-icons highlight me-2">info</span>
-            <span class="fw-bold">Apple Scab (Venturia inaequalis) Ascospore Growing Degree Day Model</span>
-            <button class="btn btn-sm btn-outline-secondary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#appleScabInfoCollapse" aria-expanded="false" aria-controls="appleScabInfoCollapse">
-              <span class="material-icons expand-icon collapsed">expand_more</span>
-            </button>
-          </div>
-          <div class="collapse" id="appleScabInfoCollapse">
-            <hr class="my-2">
-            <div class="text-muted">
-              <p>The Apple Scab Degree Day Model is used to predict the ascospore maturation of the Apple Scab fungus, in order to improve pest management decisions.</p>
-              <p>For best results, a biofix date should be set at bud-break. The growing degree day model can then be used to predict ascospore maturation.</p>
+    <div class="row mb-4">
+      <!-- Map Column -->
+      <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+          <h5 class="mb-3">Map View</h5>
+          <div id="map" style="height: 350px; width: 100%;"></div>
+        </div>
+      </div>
+      <!-- Current Growth Stage & Risk Column -->
+      <div class="col-lg-5">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <span class="material-icons highlight me-2">show_chart</span>
+              <span class="fw-bold">Current Growth Stage</span>
             </div>
+            <div class="fs-4 fw-bold" id="growthStageTitle">7% Ascospore Maturation</div>
+            <hr class="my-2">
+            <div class="mb-1"><b>Today's GDD:</b> <span id="todaysGddValue">15</span></div>
+            <div class="mb-1"><b>Accumulated GDD:</b> <span id="accumulatedGddValue">250</span></div>
+            <div class="mb-1"><b>GDD Range:</b> <span id="growthStageRange">201 - 300</span></div>
+            <div class="mb-1"><b id="growthStagePestLabel">Fungus Ascospore:</b> <span id="growthStageDesc">7% Ascospore Maturation.</span></div>
+            <div class="mt-2"><b>Next Stage:</b> <span id="nextStageDesc">20% Maturation (at 301 GDD)</span></div>
+            <hr class="my-2">
+            <div class="d-flex align-items-center mb-1">
+              <span class="material-icons highlight me-2">warning</span>
+              <span class="fw-bold">Risk Level</span>
+            </div>
+            <div id="riskLevelValue" class="fs-5 fw-bold">Low</div>
+            <p id="riskLevelDesc" class="text-muted small mb-0">Conditions are not favorable for pest/disease activity.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Map Placeholder -->
-    <div class="bg-white p-4 rounded-4 shadow-sm mb-4">
-      <h5 class="mb-3">Map View</h5>
-      <div id="map" style="height: 300px; width: 100%;"></div>
-    </div>
-
-    <!-- Current Growth Stage Card -->
+    <!-- Accumulated GDD Chart -->
     <div class="mb-4">
-      <div class="card border-0 shadow-sm rounded-4">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-2">
-            <span class="material-icons highlight me-2">show_chart</span>
-            <span class="fw-bold">Current Growth Stage</span>
-          </div>
-          <div class="fs-4 fw-bold" id="growthStageTitle">7% Ascospore Maturation</div>
-          <hr class="my-2">
-          <div><b>Today's GDD:</b> <span id="todaysGddValue">15</span></div>
-          <div><b>Accumulated GDD:</b> <span id="accumulatedGddValue">250</span></div>
-          <div><b>GDD:</b> <span id="growthStageRange">201 - 300</span></div>
-          <div><b id="growthStagePestLabel">Fungus Ascospore:</b> <span id="growthStageDesc">7% Ascospore Maturation.</span></div>
-        </div>
+      <div class="bg-white p-3 rounded-4 shadow-sm">
+        <h6 class="mb-2">Accumulated GDD
+          <span class="material-icons info-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Shows the total accumulated Growing Degree Days (GDD) over the selected period, based on the chosen base temperature and biofix date.">info</span>
+        </h6>
+        <canvas id="accumGddChart" height="120"></canvas>
       </div>
     </div>
 
@@ -216,25 +261,41 @@
             <div id="allGrowthStages">
               <!-- Growth stages will be inserted here -->
             </div>
+            <div id="gddSource" class="mt-3 pt-2 border-top text-muted small">
+              <!-- Source will be inserted here -->
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Risk Level Card -->
-    <div class="mb-4">
+    <!-- About the Model Card -->
+    <div id="modelInfoCard" class="mb-4" style="display:none;">
       <div class="card border-0 shadow-sm rounded-4">
         <div class="card-body">
           <div class="d-flex align-items-center mb-2">
-            <span class="material-icons highlight me-2">warning</span>
-            <span class="fw-bold">Risk Level</span>
+            <span class="material-icons highlight me-2">info</span>
+            <span id="modelInfoTitle" class="fw-bold">About the Model</span>
+            <button class="btn btn-sm btn-outline-secondary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#modelInfoCollapse" aria-expanded="true" aria-controls="modelInfoCollapse">
+              <span class="material-icons expand-icon">expand_more</span>
+            </button>
           </div>
-          <div class="fs-4 fw-bold" id="riskLevelValue">Low</div>
-          <hr class="my-2">
-          <div id="riskLevelDesc">Conditions are not favorable for pest/disease activity.</div>
+          <div class="collapse show" id="modelInfoCollapse">
+            <hr class="my-2">
+            <div class="text-muted">
+              <p id="modelInfoDescription"></p>
+              <h6 class="fw-bold text-success mt-3">Biofix Information</h6>
+              <p id="modelInfoBiofix"></p>
+              <h6 class="fw-bold text-success mt-3">Treatment Information</h6>
+              <p id="modelInfoTreatment"></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Biological Recommendations -->
+    <div id="biologicalRecommendations" class="mb-4"></div>
 
     <!-- Continuous Monitoring Reminder -->
     <div class="mb-4">
@@ -272,39 +333,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Biological Recommendations Section -->
-    <div class="mb-4">
-      <div class="card border-0 shadow-sm rounded-4">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-2">
-            <span class="material-icons highlight me-2">eco</span>
-            <span class="fw-bold">Biological Recommendations</span>
-          </div>
-          <div class="alert alert-warning mb-3">
-            <div class="d-flex align-items-start">
-              <span class="material-icons me-2">warning</span>
-              <div class="small">
-                <strong>Note:</strong> These recommendations are based on the current stage of the selected pest/disease. Recommendations may vary for different stages of development.
-              </div>
-            </div>
-          </div>
-          <div id="bioRecs">
-            <!-- Recommendations will be inserted here -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Charts stacked vertically -->
-    <div class="mb-4">
-      <div class="bg-white p-3 rounded-4 shadow-sm mb-4">
-        <h6 class="mb-2">Accumulated GDD
-          <span class="material-icons info-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Shows the total accumulated Growing Degree Days (GDD) over the selected period, based on the chosen base temperature and biofix date.">info</span>
-        </h6>
-        <canvas id="accumGddChart" height="120"></canvas>
-      </div>
-    </div>
   </div>
 
   <!-- Bootstrap, jQuery, Chart.js, Material Icons, and Leaflet -->
@@ -330,12 +358,16 @@
     }
 
     // Calculate daily and accumulated GDD from weather data
-    function calculateGDDSeries(weatherData, base) {
+    function calculateGDDSeries(weatherData, base, upper) {
       let accum = 0;
       return weatherData.map(d => {
-        // Use air temperature min/max (in °C)
-        const tmin = d.Temp_air_min;
-        const tmax = d.Temp_air_max;
+        let tmin = d.Temp_air_min;
+        let tmax = d.Temp_air_max;
+
+        // Adjust temperatures based on thresholds
+        if (tmin < base) tmin = base;
+        if (tmax > upper) tmax = upper;
+
         let gdd = ((tmax + tmin) / 2) - base;
         if (gdd < 0) gdd = 0;
         accum += gdd;
@@ -351,6 +383,7 @@
     let accumGddChart;
 
     function updateAccumGddChart(filteredData) {
+      if (!accumGddChart) return;
       accumGddChart.data.labels = filteredData.map(d => d.date);
       accumGddChart.data.datasets[0].data = filteredData.map(d => d.gdd);
       accumGddChart.update();
@@ -364,13 +397,16 @@
       const endDate = today.toISOString().split('T')[0];
       try {
         const weather = await fetchWeatherEOSDA(startDate, endDate);
-        const base = 10; // Hardcoded to 10°C
-        allData = calculateGDDSeries(weather, base);
+        const pest = $('#pestSelect').val();
+        const pestData = gddStages[pest];
+        allData = calculateGDDSeries(weather, pestData.base_temp, pestData.upper_temp);
         updateAccumGddChart(allData);
         // Update growth stage and risk cards
         updateGrowthStageCard();
         updateRiskLevelCard();
         updateAllGrowthStages();
+        updateModelInfoCard();
+        updateBiologicalRecommendations();
       } catch (e) {
         alert('Failed to load weather data: ' + e.message);
       }
@@ -378,11 +414,15 @@
 
     $(function() {
       // Initialize Accumulated GDD chart
-      accumGddChart = new Chart(document.getElementById('accumGddChart').getContext('2d'), {
-        type: 'line',
-        data: { labels: [], datasets: [{ label: 'Accumulated GDD', data: [], borderColor: '#8bb439', backgroundColor: 'rgba(139,180,57,0.1)', tension: 0.3, fill: true }] },
-        options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { display: true, title: { display: true, text: 'Date' } }, y: { display: true, title: { display: true, text: 'Accumulated GDD' } } } }
-      });
+      const ctx = document.getElementById('accumGddChart');
+      if (ctx) {
+        accumGddChart = new Chart(ctx.getContext('2d'), {
+          type: 'line',
+          data: { labels: [], datasets: [{ label: 'Accumulated GDD', data: [], borderColor: '#8bb439', backgroundColor: 'rgba(139,180,57,0.1)', tension: 0.3, fill: true }] },
+          options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { display: true, title: { display: true, text: 'Date' } }, y: { display: true, title: { display: true, text: 'Accumulated GDD' } } } }
+        });
+      }
+      
       loadAndDisplayGDD();
 
       // Leaflet Map
@@ -452,12 +492,39 @@
       $('#appleScabInfoCollapse').on('hide.bs.collapse', function () {
         $('#appleScabInfoCard .expand-icon').addClass('collapsed');
       });
+
+      // Handle "Show/Hide Details" button text for product recommendations
+      $('#bioRecs').on('show.bs.collapse', '.collapse', function () {
+        const targetId = '#' + $(this).attr('id');
+        $(`button[data-bs-target="${targetId}"]`).text('Hide Details');
+      }).on('hide.bs.collapse', '.collapse', function () {
+        const targetId = '#' + $(this).attr('id');
+        $(`button[data-bs-target="${targetId}"]`).text('Show Details');
+      });
+
+      // Handle "Show/Hide Details" button for biological recommendations
+      $(document).on('click', '.details-btn', function() {
+        const content = $(this).siblings('.details-content');
+        const isVisible = content.is(':visible');
+        content.slideToggle();
+        $(this).text(isVisible ? 'Show Details' : 'Hide Details');
+      });
     });
 
     // --- GDD Growth Stage Mapping (mock) ---
     const gddStages = {
       ascospore: {
-        10: [
+        base_temp: 0,
+        upper_temp: 30,
+        source_title: 'Internal Model',
+        source_url: null,
+        model_info: {
+          title: 'Apple Scab Ascospore Model',
+          description: 'The Apple Scab Degree Day Model is used to predict the ascospore maturation of the Apple Scab fungus (_Venturia inaequalis_), in order to improve pest management decisions.',
+          biofix_info: 'For best results, the biofix date should be set at bud-break. This is the starting point for GDD accumulation.',
+          treatment_info: 'Insecticide treatments should be timed based on the predicted ascospore maturation stages to prevent primary infection.'
+        },
+        stages: [
           { min: 0, max: 200, title: 'Dormant', desc: 'No ascospore maturation.' },
           { min: 201, max: 300, title: '7% Ascospore Maturation', desc: '7% Ascospore Maturation.' },
           { min: 301, max: 500, title: '20% Ascospore Maturation', desc: '20% Ascospore Maturation.' },
@@ -465,39 +532,61 @@
           { min: 801, max: 2000, title: 'Mature', desc: 'Full ascospore maturity.' }
         ]
       },
-      other: {
-        10: [
-          { min: 0, max: 400, title: 'Egg Laying', desc: 'Pest is laying eggs.' },
-          { min: 401, max: 900, title: 'Larval Stage', desc: 'Larvae are active.' },
-          { min: 901, max: 2000, title: 'Adult', desc: 'Adults present.' }
+      lightBrownAppleMoth: {
+        base_temp: 7, // 45°F
+        upper_temp: 31, // 88°F
+        source_title: 'Light Brown Apple Moth, Epiphyas postvittana (Walker), Phenological Model Analysis by Len Coop, OSU',
+        source_url: 'https://blog.pestprophet.com/how-to-use-the-light-brown-apple-moth-growing-degree-day-model/',
+        model_info: {
+          title: 'Light Brown Apple Moth Growing Degree Day Model',
+          description: 'The Light Brown Apple Moth (_Epiphyas postvittana_) is an important pest on grapes in Australia and New Zealand and is an invasive species in California. There can be 3-4 generations in a year, depending on the weather.',
+          biofix_info: 'The biofix is the first date of consistent, sustained adult moth catches using pheromone traps in the orchard or vineyard. Traps should be placed in early spring, or late winter, and checked on a regular basis. Once adult moths have been trapped for a few weeks in a row, the date of the first catch should be used as the biofix.',
+          treatment_info: 'Insecticide treatments targeting 1st or 2nd generation larvae are typically the best way to control populations. The first egg hatch will peak at approximately 390 GDD (F) and the larval stage will be between 756 and 1400 GDD (F). The optimum timing for a single insecticide treatment is approximately 1,100 GDD (F) after the adult moth catch.'
+        },
+        stages: [
+          { min: 0, max: 419, title: 'Egg Hatch to Larval Emergence', desc: 'First egg hatch peaks around 217 GDD (C). Larvae begin emerging.' },
+          { min: 420, max: 778, title: 'Larval Stage (Treatment Window)', desc: 'The main larval stage. Optimum timing for insecticide treatment is around 611 GDD (C).' },
+          { min: 779, max: 3000, title: 'Pupation & Adult Flight', desc: 'After 778 GDD (C), larvae begin to pupate and the next generation of adults emerge.' }
         ]
       }
     };
 
     function updateGrowthStageCard() {
-      const base = 10; // Hardcoded to 10°C
       const pest = $('#pestSelect').val();
-      // Use current GDD value from the calculated data
-      const currentGdd = allData[allData.length - 1]?.gdd || 0;
-      const todaysGdd = allData[allData.length - 1]?.dailyGdd || 0;
-      const stages = gddStages[pest][base];
-      let stage = stages[0];
-      for (let s of stages) {
-        if (currentGdd >= s.min && currentGdd <= s.max) { stage = s; break; }
+      const pestData = gddStages[pest];
+      const currentGdd = allData.length > 0 ? allData[allData.length - 1].gdd : 0;
+      const todaysGdd = allData.length > 0 ? allData[allData.length - 1].dailyGdd : 0;
+      
+      let currentStage = pestData.stages.find(s => currentGdd >= s.min && currentGdd <= s.max);
+      if (!currentStage) {
+        currentStage = { title: 'N/A', desc: 'No data available.', min: 'N/A', max: 'N/A' };
       }
-      $('#growthStageTitle').text(stage.title);
+
+      const currentIndex = pestData.stages.findIndex(s => s.title === currentStage.title);
+      let nextStage = null;
+      if (currentIndex > -1 && currentIndex < pestData.stages.length - 1) {
+        nextStage = pestData.stages[currentIndex + 1];
+      }
+
+      let nextStageDesc = 'Final stage reached.';
+      if (nextStage) {
+        nextStageDesc = `${nextStage.title} (at ${nextStage.min} GDD)`;
+      }
+      
+      $('#growthStageTitle').text(currentStage.title);
       $('#todaysGddValue').text(todaysGdd || 'N/A');
       $('#accumulatedGddValue').text(currentGdd || 'N/A');
-      $('#growthStageRange').text(`${stage.min} - ${stage.max}`);
-      $('#growthStagePestLabel').text($('#pestSelect option:selected').text() + ':');
-      $('#growthStageDesc').text(stage.desc);
+      $('#growthStageRange').text(`${currentStage.min} - ${currentStage.max}`);
+      $('#growthStagePestLabel').html(`<b>${$('#pestSelect option:selected').text().split(' (')[0]}:</b>`);
+      $('#growthStageDesc').text(currentStage.desc);
+      $('#nextStageDesc').text(nextStageDesc);
     }
 
     function updateAllGrowthStages() {
-      const base = 10; // Hardcoded to 10°C
       const pest = $('#pestSelect').val();
+      const pestData = gddStages[pest];
       const currentGdd = allData[allData.length - 1]?.gdd || 0;
-      const stages = gddStages[pest][base];
+      const stages = pestData.stages;
       
       let html = '';
       stages.forEach((stage, index) => {
@@ -530,22 +619,52 @@
       });
       
       $('#allGrowthStages').html(html);
+
+      // Update the source information
+      const sourceDiv = $('#gddSource');
+      if (pestData.source_url && pestData.source_title) {
+        sourceDiv.html(`Source: <a href="${pestData.source_url}" target="_blank" rel="noopener noreferrer">${pestData.source_title}</a>`);
+      } else if (pestData.source_title) {
+        sourceDiv.html(`Source: ${pestData.source_title}`);
+      } else {
+        sourceDiv.html('');
+      }
     }
 
     // Listen to filter changes
     $('#pestSelect').on('change', function() {
       updateGrowthStageCard();
       updateAllGrowthStages();
+      updateModelInfoCard();
+      // Need to re-calculate GDD series with new pest thresholds
+      loadAndDisplayGDD();
     });
+
     // Also update after mock GDD values are set
     $(function() {
       updateGrowthStageCard();
       updateAllGrowthStages();
+      updateModelInfoCard();
     });
+
+    function updateModelInfoCard() {
+      const pest = $('#pestSelect').val();
+      const pestData = gddStages[pest];
+      const modelInfo = pestData.model_info;
+
+      if (modelInfo) {
+        $('#modelInfoTitle').text(modelInfo.title);
+        $('#modelInfoDescription').text(modelInfo.description);
+        $('#modelInfoBiofix').text(modelInfo.biofix_info);
+        $('#modelInfoTreatment').text(modelInfo.treatment_info);
+        $('#modelInfoCard').show();
+      } else {
+        $('#modelInfoCard').hide();
+      }
+    }
 
     // --- Risk Level logic (general) ---
     function updateRiskLevelCard() {
-      const base = 10; // Hardcoded to 10°C
       const pest = $('#pestSelect').val();
       const gdd = allData[allData.length - 1]?.gdd || 0;
       let risk = 'Low', desc = 'Conditions are not favorable for pest/disease activity.';
@@ -567,55 +686,661 @@
       $('#riskLevelValue').text(risk);
       $('#riskLevelDesc').text(desc);
     }
+
+    // --- Biological Recommendations logic ---
+    function updateBiologicalRecommendations() {
+        const pest = $('#pestSelect').val();
+        const recommendations = getRecommendationsForPest(pest);
+        const recommendationsContainer = $('#biologicalRecommendations');
+
+        let html = `
+    <div class="card border-0 shadow-sm rounded-4 mb-3">
+        <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+            <span class="material-icons highlight me-2">eco</span>
+            <span class="fw-bold">Biological Recommendations</span>
+        </div>
+        </div>
+    </div>`;
+
+        if (recommendations.length > 0) {
+            recommendations.forEach((product, index) => {
+                const collapseId = `rec-details-${index}`;
+                html += `
+        <div class="card border-0 shadow-sm rounded-4 mb-3">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-2 text-center d-flex flex-column align-items-center justify-content-center">
+                        <img src="${product.image}" alt="${product.product_name}" class="img-fluid rounded mb-2" style="max-height: 120px;">
+                        <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success">Learn More</a>
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold">${product.product_name}</h5>
+                        <p class="mb-3 text-muted" style="font-size: 0.9rem;">${product.description}</p>
+                        
+                        <div style="background: #f0f8ff; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;">
+                            <strong style="color: #1565c0;">Active Microbes:</strong>
+                            <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem; color: #444;">
+                                ${product.microbes.map(microbe => `<li style="margin-bottom: 0.3rem; font-style: italic;">${microbe}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <button class="btn btn-sm btn-main-green mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+                            Show Details
+                        </button>
+
+                        <div class="collapse" id="${collapseId}">
+                            ${product.benefits && product.benefits.length > 0 ? `
+                            <div style="background: #edf7ed; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;">
+                                <strong style="color: #2e7d32;">Key Benefits:</strong>
+                                <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem; color: #444;">
+                                    ${product.benefits.slice(0, 5).map(benefit => `<li style="margin-bottom: 0.3rem;">${benefit}</li>`).join('')}
+                                </ul>
+                            </div>` : ''}
+                            
+                            ${product.recommended_foods && product.recommended_foods.length > 0 ? `
+                            <div style="background: #fff8e1; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;">
+                                <strong style="color: #f57f17;">Recommended Microbial Foods:</strong>
+                                <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem; color: #444;">
+                                    ${product.recommended_foods.map(food => `<li style="margin-bottom: 0.25rem;">${food}</li>`).join('')}
+                                </ul>
+                            </div>` : ''}
+
+                            ${product.application_rates ? `
+                            <div style="background: #e3f2fd; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;">
+                                <strong style="color: #1565c0;">Application Rates:</strong>
+                                <div style="margin: 0.5rem 0 0 0; color: #444;">
+                                    ${Object.entries(product.application_rates).map(([method, rates]) => {
+                                        if (typeof rates === 'string') {
+                                            return `<div style="margin-bottom: 0.5rem;"><strong>${method.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> ${rates}</div>`;
+                                        } else if (typeof rates === 'object') {
+                                            const rateList = Object.entries(rates).map(([crop, rate]) => 
+                                                `<div style="margin-left: 1rem; margin-bottom: 0.25rem;"><strong>${crop.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong> ${rate}</div>`
+                                            ).join('');
+                                            return `<div style="margin-bottom: 0.5rem;"><strong>${method.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong>${rateList}</div>`;
+                                        }
+                                        return '';
+                                    }).join('')}
+                                </div>
+                            </div>` : ''}
+
+                            ${product.notes ? `
+                            <div style="margin-top: 1rem;">
+                                <strong style="color: #666;">Application Notes:</strong>
+                                <p style="color: #666; margin: 0.5rem 0; font-size: 0.9rem;">${product.notes}</p>
+                            </div>` : ''}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+            });
+        } else {
+            html += `
+        <div class="alert alert-info">
+            No specific biological recommendations for the selected pest type.
+        </div>`;
+        }
+        recommendationsContainer.html(html);
+
+        // Re-initialize the button text handler for the new buttons
+        $(`[data-bs-toggle="collapse"]`).off('show.bs.collapse hide.bs.collapse').on('show.bs.collapse', function () {
+          $(this).text('Hide Details');
+        }).on('hide.bs.collapse', function () {
+          $(this).text('Show Details');
+        });
+    }
+
     $('#pestSelect').on('change', function() {
       updateRiskLevelCard();
+      updateBiologicalRecommendations();
     });
     $(function() {
       updateRiskLevelCard();
+      updateBiologicalRecommendations();
     });
 
-    // --- NTS Product Recommendations Mapping (sample) ---
-    const ntsProducts = {
-      ascospore: [
-        {
-          name: 'NTS BAM™ (Biologically Activated Minerals)',
-          desc: 'A microbial inoculant to support plant health and resilience against fungal pathogens.',
-          link: 'https://www.nutri-tech.com.au/products/bam-biologically-activated-minerals'
-        },
-        {
-          name: 'NTS Triple Ten™',
-          desc: 'A broad-spectrum liquid fertiliser with trace elements and biologicals for plant vigor.',
-          link: 'https://www.nutri-tech.com.au/products/triple-ten'
-        }
-      ],
-      other: [
-        {
-          name: 'NTS K-Carb™',
-          desc: 'A potassium carbonate solution for disease suppression and improved plant health.',
-          link: 'https://www.nutri-tech.com.au/products/k-carb'
-        }
-      ]
-    };
+    // --- Product and Microbe Data (from Microbial Tool) ---
+    const microbes = [
+      { name: "Bacillus subtilis", type: "bacterium", suppresses: ["fungi", "bacteria"] },
+      { name: "Bacillus polymyxa", type: "bacterium", suppresses: ["fungi", "bacteria"] },
+      { name: "Bacillus megaterium", type: "bacterium", suppresses: ["fungi"] },
+      { name: "Bacillus amyloliquefaciens", type: "bacterium", suppresses: ["fungi", "bacteria"] },
+      { name: "Bacillus licheniformis", type: "bacterium", suppresses: ["fungi", "bacteria"] },
+      { name: "Bacillus pumilus", type: "bacterium", suppresses: ["fungi", "bacteria"] },
+      { name: "Azotobacter vinelandii", type: "bacterium", suppresses: [] },
+      { name: "Azotobacter chroococcum", type: "bacterium", suppresses: [] },
+      { name: "Azospirillum brasilense", type: "bacterium", suppresses: [] },
+      { name: "Gluconacetobacter diazotrophicus", type: "bacterium", suppresses: [] },
+      { name: "Pseudomonas fluorescens", type: "bacterium", suppresses: ["fungi", "bacteria", "nematodes"] },
+      { name: "Lactic acid bacteria", type: "bacterium", suppresses: ["bacteria"] },
+      { name: "Purple non-sulfur bacteria", type: "bacterium", suppresses: ["bacteria"] },
+      { name: "Trichoderma harzianum", type: "fungus", suppresses: ["fungi", "nematodes"] },
+      { name: "Trichoderma lignorum", type: "fungus", suppresses: ["fungi"] },
+      { name: "Trichoderma koningii", type: "fungus", suppresses: ["fungi"] },
+      { name: "Beauveria bassiana", type: "fungus", suppresses: ["insects"] },
+      { name: "Metarhizium anisopliae", type: "fungus", suppresses: ["insects"] },
+      { name: "Lecanicillium lecanii", type: "fungus", suppresses: ["insects"] },
+      { name: "Glomus intraradices", type: "AMF", suppresses: [] },
+      { name: "Glomus clarum", type: "AMF", suppresses: [] },
+      { name: "Glomus aggregatum", type: "AMF", suppresses: [] },
+      { name: "Glomus deserticola", type: "AMF", suppresses: [] },
+      { name: "Glomus macrocarpum", type: "AMF", suppresses: [] },
+      { name: "Glomus caledonium", type: "AMF", suppresses: [] },
+      { name: "Glomus mosseae", type: "AMF", suppresses: [] },
+      { name: "Gigaspora rosea", type: "AMF", suppresses: [] },
+      { name: "Gigaspora margarita", type: "AMF", suppresses: [] },
+      { name: "Scutellospora heterogama", type: "AMF", suppresses: [] },
+      { name: "Beneficial yeasts", type: "yeast", suppresses: ["fungi"] },
+      { name: "Fermenting fungi", type: "fungus", suppresses: ["fungi"] },
+      { name: "Compost Tea", description: "Rich source of diverse microbial nutrients", supports: ["bacterium", "fungus", "yeast", "AMF"] }
+    ];
 
-    function updateBioRecs() {
-      const pest = $('#pestSelect').val();
-      const recs = ntsProducts[pest] || [];
-      let html = '';
-      if (recs.length === 0) {
-        html = '<div class="text-muted">No recommendations available for this pest/disease.</div>';
-      } else {
-        html = recs.map(prod => `
-          <div class="mb-2">
-            <b>${prod.name}</b><br>
-            <span>${prod.desc}</span><br>
-            <a href="${prod.link}" class="btn btn-sm btn-outline-success mt-1" target="_blank">More Information <span class="material-icons" style="font-size:1em;vertical-align:middle;">open_in_new</span></a>
-          </div>
-        `).join('');
-      }
-      $('#bioRecs').html(html);
+    const products = [
+    {
+  "product_name": "Nutri‑Life B.Sub™",
+  "microbes": ["Bacillus subtilis"],
+  "application": ["Soil", "Foliar", "Seedling treatment"],
+  "product_form": "Liquid",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": ["fungi", "bacteria"],
+    "insects": []
+  },
+  "benefits": [
+    "Phosphorus solubilization through organic acids and siderophores",
+    "Plant hormone production (auxins, gibberellins, cytokinins)",
+    "Induced systemic resistance (ISR) enhances disease tolerance",
+    "Phytoalexin-like antimicrobial production",
+    "Biofilm disruption and rhizosphere balance",
+    "Stress resilience against heat, drought, UV, salinity, and chemicals",
+    "Bio‑balancing probiotic supports healthy rhizosphere",
+    "Reduces reliance on chemical nutrients and pesticides"
+  ],
+  "recommended_foods": [
+    "Activator powder included with product – protein precursors to boost metabolite production"
+  ],
+  "notes": "Mix B.Sub™ with Activator powder in clean vessel per instructions. For foliar, soil or seedling treatment. Do not mix with fungicides or fumigants; add last to tank.",
+  "description": "Selected, vigorous strains of Bacillus subtilis with Activator technology. Powerful probiotic that balances the rhizosphere, promotes growth, and enhances natural plant defenses via phytoalexin stimulation.",
+  "application_rates": {
+    "foliar": {
+      "vegetables": "1–2 L/ha every 2–3 weeks",
+      "orchards_vineyards": "1–5 L/ha every 4–8 weeks",
+      "ornamentals": "1–2 L/ha every 4–8 weeks",
+      "turf": "1–2 L/ha every 3–4 weeks",
+      "broadacre": "min 625 mL/ha as required",
+      "spot": "50 mL/10 L water"
+    },
+    "seedling_treatment": "1 L per 100 L solution",
+    "soil": "1–2 L/ha as required"
+  },
+  "link": "https://nutri-tech.com.au/products/b-sub",
+  "image": "/src/assets/b-sub.webp"
+},
+{
+  "product_name": "Nutri‑Life BAM™",
+  "microbes": [
+    "Lactic acid bacteria",
+    "Purple non-sulfur bacteria",
+    "Beneficial yeasts",
+    "Fermenting fungi"
+  ],
+  "application": ["Soil", "Foliar", "Compost", "Seedling treatment"],
+  "product_form": "Liquid",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": ["bacteria"],
+    "insects": []
+  },
+  "benefits": [
+    "Atmospheric nitrogen fixation (free‑living N₂ → NH₄⁺)",
+    "Phosphorus solubilization through organic acids and siderophores",
+    "Potassium solubilization via organic acids",
+    "Iron reduction enhances iron availability",
+    "Manganese reduction improves manganese uptake",
+    "Organic matter decomposition accelerates crop residue breakdown",
+    "Compost enhancement to speed composting",
+    "Biofilm disruption and rhizosphere balance",
+    "Moisture retention via microbial mucilage",
+    "Bio‑balancing probiotic supports healthy rhizosphere",
+    "Stress resilience against heat, drought, UV, salinity, and chemicals",
+    "Improves nutrient availability (P, N, K, micronutrients)",
+    "Populates roots and leaves with beneficial microbes",
+    "Improves soil structure and water‑holding capacity",
+    "Promotes soil and effluent remediation (manure ponds, septic systems)",
+    "Reduces reliance on chemical nutrients and fertilizers"
+  ],
+  "recommended_foods": [
+    "Molasses or raw sugar – carbohydrate fuel for fermentation",
+    "NTS Fast Fulvic™ – enhances microbial activity",
+    "SeaChange™ liquid kelp or fulvic blend – supports microbial diversity",
+    "Compost‑tea mix (compost + SeaChange + sugar) – ideal for compost application"
+  ],
+  "notes": "Apply via foliar spray, soil drench, compost or seedling treatment. For compost: 1 L/m³; foliar/fertigation: 300 mL–1 L/100 L weekly or as required; seed: 5 L/tonne. Drench: dilute 1:500. Ensure anaerobic conditions. Do not mix with fungicides; sanitize tank before use.",
+  "description": "Multipurpose anaerobic probiotic blend designed to enhance plant growth, nutrient cycling, composting, soil structure, resilience, and remediation in soil, foliar and compost applications.",
+  "application_rates": {
+    "foliar": {
+      "horticulture_ornamentals_turf": "300 mL–1 L/100 L (up to 7 L/ha), weekly or as required",
+      "broadacre": "300 mL–5 L/≥70 L water, as required",
+      "spot": "30–50 mL/10 L water"
+    },
+    "fertigation": {
+      "horticulture_ornamentals_turf": "5–30 L/ha, weekly or as required",
+      "broadacre": "as required"
+    },
+    "drip_drench": "Dilute 1:500, thoroughly drench entire plant; repeat monthly or as required",
+    "compost": "1 L/m³ compost, maintain anaerobic conditions",
+    "seedling_treatment": "5 L/tonne seed (max 12 L/tonne including Seed‑Start)"
+  },
+  "link": "https://nutri-tech.com.au/products/nutri-life-bam",
+  "image": "/src/assets/Nutri-LifeBAM20L.webp"
+},
+{
+  "product_name": "Nutri‑Life Bio‑N™",
+  "microbes": ["Azotobacter vinelandii"],
+  "application": ["Soil", "Seed treatment", "Seedling treatment"],
+  "product_form": "Liquid",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": [],
+    "insects": []
+  },
+  "benefits": [
+    "Atmospheric nitrogen fixation (free‑living N₂ → NH₄⁺)",
+    "Improves water retention via hygroscopic mucilage",
+    "Enhances germination, root development, function, and seedling emergence",
+    "Phosphorus solubilization through organic acids",
+    "Increases yield and quality",
+    "Reduces soil erosion",
+    "Bio‑balancing probiotic supports healthy rhizosphere",
+    "Reduces reliance on chemical fertilizers"
+  ],
+  "recommended_foods": [
+    "Ensure adequate organic matter or apply NTS Fast Fulvic™ – supports Azotobacter metabolic activity",
+    "Include molybdenum sources (e.g. Nutri‑Key Shuttle Seven™ or sodium molybdate) – essential co‑factor for nitrogenase enzyme",
+    "Apply alongside mycorrhizal inoculum (e.g. Nutri‑Life Platform®) plus fulvic acids – for synergistic nutrient cycling"
+  ],
+  "notes": "Apply in late afternoon after sanitising equipment; do not mix with fungicides or fumigants. Azotobacter performance linked to molybdenum, cobalt, organic carbon, and mycorrhiza presence.",
+  "description": "Free‑living nitrogen‑fixing Azotobacter vinelandii that converts atmospheric N₂ to ammonium, secretes moisture‑retaining mucilage, promotes early growth and phosphorus release, and supports yield and soil resilience.",
+  "application_rates": {
+    "soil_horticulture": "1 L/ha every 4 weeks or as required",
+    "soil_broadacre": "0.5 L/ha at planting (liquid inject)",
+    "seed_treatment_horticulture": "5 mL/kg seed just prior to planting",
+    "seed_treatment_broadacre": "2 L/tonne seed just prior to planting",
+    "seedling_treatment": "Dip seedlings in 1 mL per L solution just before planting"
+  },
+  "link": "https://nutri-tech.com.au/products/bio-n",
+  "image": "/src/assets/Nutri-LifeBio-N5L.webp"
+},
+{
+  "product_name": "Nutri‑Life Bio‑Plex™",
+  "microbes": ["Azotobacter vinelandii", "Bacillus subtilis"],
+  "application": ["Foliar", "Seedling treatment"],
+  "product_form": "Liquid",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": ["fungi", "bacteria"],
+    "insects": []
+  },
+  "benefits": [
+    "Atmospheric nitrogen fixation (free‑living N₂ → NH₄⁺)",
+    "Plant hormone production (auxins, gibberellins, cytokinins)",
+    "Phosphorus solubilization through organic acids and siderophores",
+    "Increases Brix (sugar) levels and overall crop quality",
+    "Vitamin production on leaf surfaces (C, E, B‑group)",
+    "Induced systemic resistance (ISR) enhances disease tolerance",
+    "Bio‑balancing probiotic supports healthy phyllosphere",
+    "Reduces reliance on chemical nitrogen fertilizers"
+  ],
+  "recommended_foods": [
+    "Triple Ten™ foliar nutrient – provides soluble phosphorus, iron, molybdenum, fulvic acid and kelp to support microbes",
+    "Ensure presence of leaf exudates for Azotobacter – no additional carbon food needed"
+  ],
+  "notes": "Apply foliar every 2–4 weeks. Use 100 mL per 100 L water (up to 400–700 mL/ha). Add Triple Ten™ for optimal performance. Shake before use; use within 3 months of opening.",
+  "description": "Foliar inoculum combining Azotobacter and Bacillus to fix N on the leaf, boost phytohormones, vitamins, P solubilisation, ISR, and microbial balance for higher yields and quality.",
+  "application_rates": {
+    "foliar_vegetables": "100 mL/100 L (up to 400 mL/ha) every 2 weeks or as required",
+    "foliar_orchards_vineyards": "100 mL/100 L (up to 700 mL/ha) every 3–4 weeks or as required",
+    "foliar_ornamentals_turf": "100 mL/100 L (up to 400 mL/ha) every 3–4 weeks or as required",
+    "foliar_broadacre": "125 mL/ha in 60–100 L water as required",
+    "spot_spray": "10 mL/10 L water per application",
+    "seedling_treatment": "Dip seedlings in 1 mL per L solution before planting"
+  },
+  "link": "https://nutri-tech.com.au/products/bio-plex",
+  "image": "/src/assets/Nutri-LifeBio-Plex5L.webp"
+},
+{
+  "product_name": "Nutri‑Life Bio‑P™",
+  "microbes": ["Bacillus polymyxa", "Bacillus megaterium"],
+  "application": ["Soil", "Foliar", "Seedling treatment"],
+  "product_form": "Liquid",
+  "organic_certified": false,
+  "control_targets": {
+    "pathogens": ["fungi"],
+    "insects": []
+  },
+  "benefits": [
+    "Phosphorus solubilization through organic acids and siderophores",
+    "Enhances root development, function, and seedling emergence",
+    "Increases nutrient availability (P)",
+    "Increases Brix (sugar) levels and overall crop quality",
+    "Full-season phosphate promotion",
+    "No withholding period"
+  ],
+  "recommended_foods": [
+    "NTS Fast Fulvic™ — to enhance Bacillus-mediated phosphorus solubilisation",
+    "SeaChange™ liquid kelp — supports microbial activity and nutrient uptake",
+    "Optional: small inclusion of Triple Ten™ during foliar applications for micronutrient co-factors"
+  ],
+  "notes": "Apply in clean tank; foliar use rate at 100 mL/100 L water or 1 L/ha soil. Seedling treatment at 1 mL/L. Do not mix with fungicides.",
+  "description": "Liquid Bacillus blend that unlocks rock phosphate, boosts root health and sugar levels, supplies season‑long P availability, and is safe with no harvest withholding.",
+  "application_rates": {
+    "soil_horticulture": "1 L/ha every 4 weeks or as required",
+    "soil_broadacre": "0.5 L/ha at planting",
+    "seedling_treatment": "Dip seedlings in 1 mL/L just before transplant",
+    "seed_treatment_horticulture": "5 mL/kg seed pre-planting",
+    "seed_treatment_broadacre": "2 L/tonne seed pre-planting",
+    "foliar": "100 mL/100 L water (up to 400 mL/ha) every 2–4 weeks"
+  },
+  "link": "https://nutri-tech.com.au/products/bio-p",
+  "image": "/src/assets/Nutri-LifeBio-P5L_11109878-ee20-4f0c-b071-ca0d55fc945a.webp"
+},
+{
+  "product_name": "Nutri‑Life Micro‑Force™",
+  "microbes": [
+    "Bacillus subtilis",
+    "Bacillus amyloliquefaciens",
+    "Bacillus megaterium",
+    "Bacillus pumilus",
+    "Bacillus licheniformis"
+  ],
+  "application": ["Soil", "Foliar"],
+  "product_form": "Solid (for on‑farm brew)",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": ["fungi", "bacteria"],
+    "insects": []
+  },
+  "benefits": [
+    "Increases nutrient solubilisation",
+    "Improves root development and function",
+    "Fixes atmospheric nitrogen",
+    "Improves crop resilience",
+    "Bio‑balancing blend"
+  ],
+  "recommended_foods": [
+    "LMF™ (Liquid Microbe Food) – 1 L per 100 L brew",
+    "Dominate‑B™ – 1 L per 100 L brew (to promote bacterial dominance)",
+    "Path‑X™ – 100 mL per 10 L to sanitize brewing equipment"
+  ],
+  "notes": "Sanitise brewer with Path‑X™ (100 mL/10 L). For each 100 L water: add 1 L LMF™, 1 L Dominate‑B™, sprinkle 50 g Micro‑Force™, aerate 18–24 hrs at 20–3 °C until heavy frothing indicates full brew. Apply as soon as possible (or stabilise up to 2 weeks with Dominate‑B™). Use brewer hygiene and correct aeration. Do not mix with fungicides or chemicals.",
+  "description": "A robust multi‑species Bacillus blend for on‑farm aerobic brewing to unlock nutrients, build root health, bio‑balance soils, fix nitrogen, and improve crop resilience.",
+  "application_rates": {
+    "foliar": {
+      "vegetables": "50 L/ha of brewed concentrate every 2 weeks",
+      "orchards_vineyards_ornamentals": "50 L/ha every 4–8 weeks",
+      "turf": "50 L/ha every 3–4 weeks",
+      "broadacre": "20–50 L/ha as required",
+      "spot": "1 part brewed concentrate to 2 parts water"
+    },
+    "fertigation": {
+      "all_crops": "50–100 L/ha every 2–8 weeks depending on crop type"
     }
-    $('#pestSelect').on('change', updateBioRecs);
-    $(function() { updateBioRecs(); });
+  },
+  "link": "https://nutri-tech.com.au/products/micro-force",
+  "image": "/src/assets/Nutri-LifeMicro-Force20kg.webp"
+},
+{
+  "product_name": "Nutri‑Life Myco‑Force™",
+  "microbes": [
+    "Beauveria bassiana",
+    "Metarhizium anisopliae",
+    "Lecanicillium lecanii"
+  ],
+  "application": ["Soil", "Foliar", "Seedling treatment"],
+  "product_form": "Solid (talc)",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": [],
+    "insects": ["aphid", "thrip", "whitefly", "psyllid/leafhopper", "mite", "caterpillar/moth larva", "beetle grub", "grasshopper/locust", "termite", "scale insect", "mealybug", "fungus gnat", "soil-borne grub"]
+  },
+  "benefits": [
+    "Repopulates soil with beneficial entomopathogenic fungi",
+    "Assists recovery from insect damage through targeted fungal action",
+    "Bio‑balancing probiotic supports healthy rhizosphere",
+    "Suitable across all crop stages (seed to harvest)",
+    "Can be used right up to harvest with no withholding period"
+  ],
+  "recommended_foods": [
+    "LMF™ (Liquid Microbe Food) – 1 L per 100 L fungal brew",
+    "Dominate‑F™ – 1 L per 100 L to encourage fungal dominance",
+    "Compost tea slurry – 5 L compost per 100 L to support microbial diversity",
+    "Triple Ten™ – foliar nutrient support when applied above ground"
+  ],
+  "notes": "Prepare slurry: 1 kg product in 10 L water, stir for 2 min and rest 1 hr, strain, then brew/fertigate or foliar spray. Apply prior to irrigation; avoid direct sun and high pressure. Can be tank-mixed with Triple Ten™ for foliar use. Use protective gear.",
+  "description": "Talc‑based formulation of entomopathogenic fungi that suppress insect pests, restore fungal populations, balance soil ecology, and can be applied at any crop stage—even up to harvest.",
+  "application_rates": {
+    "soil": "1–2 kg/ha, repeat initial application after 2 weeks, then as required",
+    "soil_drench": "5 g/L water via watering can over small area",
+    "foliar": "Use slurry in 100–200 L water per ha; frequency per pest pressure",
+    "seedling_treatment": "1 kg slurry per 10 L water as soil drench pre-plant"
+  },
+  "link": "https://nutri-tech.com.au/products/myco-force",
+  "image": "/src/assets/Nutri-LifeMyco-Force5kg.webp"
+},
+{
+  "product_name": "Nutri‑Life Platform®",
+  "microbes": [
+    "Glomus intraradices",
+    "Glomus clarum",
+    "Glomus aggregatum",
+    "Glomus deserticola",
+    "Glomus macrocarpum",
+    "Glomus caledonium",
+    "Glomus mosseae",
+    "Gigaspora rosea",
+    "Gigaspora margarita",
+    "Scutelospora heterogama",
+    "Azospirillum brasilense",
+    "Azotobacter chroococcum",
+    "Gluconacetobacter diazotrophicus",
+    "Bacillus megaterium",
+    "Pseudomonas fluorescens"
+  ],
+  "application": ["Seed treatment", "Seedling treatment", "Soil"],
+  "product_form": "Solid",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": ["fungi", "bacteria", "nematodes"],
+    "insects": []
+  },
+  "benefits": [
+    "Mycorrhizal symbiosis expands root zone, improves water & nutrient uptake",
+    "Builds soil humus via glomalin production",
+    "Atmospheric nitrogen fixation (free‑living N₂ → NH₄⁺)",
+    "Phosphorus solubilization through organic acids and siderophores",
+    "Potassium solubilization",
+    "Iron reduction enhances iron availability",
+    "Manganese reduction improves manganese uptake",
+    "Zinc mobilization",
+    "Plant hormone production (auxins, gibberellins, cytokinins)",
+    "Enhances root development, function, and seedling emergence",
+    "Bio‑balancing probiotic supports healthy rhizosphere",
+    "Stress resilience against heat, drought, UV, salinity, and chemicals",
+    "Reduces reliance on chemical fertilizers"
+  ],
+  "recommended_foods": [
+    "Compost or compost tea — supports mycorrhizal fungi and bacterial partners",
+    "NTS Fast Fulvic™ — fosters bacterial colonisers and nutrient mobility",
+    "SeaChange™ (liquid kelp/fulvic) — boosts AMF growth and root health"
+  ],
+  "notes": "Apply as seed treatment (1–1.6 kg/tonne seed), seedling treatment (400 g/100 L dip), or soil at 200 g–1 kg/ha. Agitate constantly to avoid settling; avoid fine filters. Apply prior to rain or irrigation. Do not mix with fungicides or fumigants; sanitise tanks.",
+  "description": "A synergistic blend of eight AMF species plus beneficial bacteria/nitrogen-fixers and nutrient mobilisers, designed to vastly expand root systems, improve nutrient uptake, build humus, balance soil microbiome, and enhance crop resilience.",
+  "application_rates": {
+    "seed_treatment_small_seeds": "1.6 kg/tonne",
+    "seed_treatment_medium_seeds": "1.3 kg/tonne",
+    "seed_treatment_large_seeds": "1 kg/tonne",
+    "seedling_treatment": "400 g/100 L dip",
+    "soil": "200 g–1 kg/ha",
+    "liquid_inject": "50–100 g/ha"
+  },
+  "link": "https://nutri-tech.com.au/products/platform",
+  "image": "/src/assets/Platform_1Kg_03122024.webp"
+},
+{
+  "product_name": "Nutri‑Life Root‑Guard™",
+  "microbes": [
+    "Trichoderma harzianum",
+    "Arthrobotrys conoides",
+    "Pochonia chlamydosporium",
+    "Purpureocillium lilacinus"
+  ],
+  "application": ["Soil", "Seedling treatment"],
+  "product_form": "Solid (talc)",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": ["fungi", "bacteria", "nematodes"],
+    "insects": []
+  },
+  "benefits": [
+    "Bio‑balancing probiotic supports healthy rhizosphere",
+    "Enhances root development, function, and seedling emergence",
+    "Pathogen suppression in the root zone",
+    "Nematode suppression",
+    "Suitable across all crop stages (seed to harvest)",
+    "No withholding period"
+  ],
+  "recommended_foods": [
+    "Triple Ten™ – provides trace minerals, fulvic acid and kelp to support fungal colonization",
+    "Optional compost tea or humic acids to enhance soil fungal diversity"
+  ],
+  "notes": "Mix talc into water to create slurry, stand 1 hr, sieve, then apply via soil injection or fertigation. Apply just before rain or irrigation and avoid direct sun. Can be re-applied monthly during soil recovery. Use personal protection when handling.",
+  "description": "Talc-based formulation of beneficial fungi designed to rebalance the root-zone microbiome, suppress soil-borne pathogens and nematodes, and support root health across plant life cycles.",
+  "application_rates": {
+    "soil": "5 kg/ha; reapply monthly in recovering soils",
+    "seedling_treatment": "Slurry with 1 kg per 10 L water; drench at transplant"
+  },
+  "link": "https://nutri-tech.com.au/products/root-guard",
+  "image": "/src/assets/Nutri-LifeRoot-Guard5kg_63a9e3d1-daed-420e-ba4c-70d41fc8ad3e.webp"
+},
+{
+  "product_name": "Nutri‑Life Sudo‑Shield™",
+  "microbes": ["Pseudomonas fluorescens"],
+  "application": ["Soil", "Foliar", "Seedling treatment", "Seed treatment", "Cuttings treatment"],
+  "product_form": "Solid (talc)",
+  "organic_certified": true,
+  "control_targets": {
+    "pathogens": ["fungi", "bacteria", "nematodes"],
+    "insects": []
+  },
+  "benefits": [
+    "Pathogen protection via competitive suppression",
+    "Frost protection by eliminating ice-nucleating bacteria",
+    "Silica and phosphate solubilization",
+    "Stress resilience against heat, drought, UV, salinity",
+    "Plant growth promotion via enzyme and phytohormone production",
+    "Bio‑balancing probiotic supports healthy rhizosphere",
+    "Rescues pathogen‑damaged soils and plants",
+    "Suitable across all crop stages (seed to harvest)",
+  ],
+  "recommended_foods": [
+    "LMF™ (Liquid Microbe Food) – 4 L per 200 L brew",
+    "Molasses – 2 L per 200 L brew",
+    "NTS Fast Fulvic™ – 1 L per 200 L brew",
+    "Triple Ten™ – include in foliar/fertigation mix for trace nutrients & fulvic support"
+  ],
+  "notes": "For 200 L brew: mix 2 kg Sudo‑Shield™, LMF™, molasses, fulvic; aerate 24 hrs. Foliar spray rate 250 g/100 L water (up to 2.5 kg/ha); soil 2.5 kg/ha at bed prep/planting; seedling dips & cuttings per label. Use late afternoon, sieve slurry, avoid mixing with chemicals, sanitize tank, protect operators. Refrigerate opened packs; use within 3 months.",
+  "description": "Talc‑based Pseudomonas fluorescens inoculum designed to restore pathogen-damaged soils, suppress pathogens, solubilize silica and phosphorus, provide frost protection, enhance stress resilience, and support plant growth across all crop stages.",
+  "application_rates": {
+    "foliar": "250 g/100 L water (up to 2.5 kg/ha) as required",
+    "soil": "2.5 kg/ha during bed prep or at planting (via boom or fertigation)",
+    "seedling_treatment": "Dip seedlings in 5 g/L slurry just before planting",
+    "seed_treatment_horticulture": "5 g/kg seed pre‑plant",
+    "seed_treatment_broadacre": "2 kg/tonne seed",
+    "cuttings_treatment": "10 g/L dip pre‑plant"
+  },
+  "link": "https://nutri-tech.com.au/products/nutri-life-sudo-shield",
+  "image": "/src/assets/Sudo-Shield_5kg_FEB25.webp"
+},
+{
+  "product_name": "Nutri‑Life Tricho‑Shield™",
+  "microbes": ["Trichoderma harzianum", "Trichoderma lignorum", "Trichoderma koningii"],
+  "application": ["Soil", "Foliar", "Seedling treatment", "Seed treatment", "Cuttings treatment"],
+  "product_form": "Solid (talc)",
+  "organic_certified": false,
+  "control_targets": {
+    "pathogens": ["fungi", "nematodes"],
+    "insects": ["insects", "aphid", "thrip", "whitefly", "beetle", "caterpillar", "mite"]
+  },
+  "benefits": [
+    "Bio‑balancing probiotic supports healthy rhizosphere and phyllosphere",
+    "Enhances root development, function, and seedling emergence",
+    "Pathogen suppression (fungal & bacterial) via competitive colonisation",
+    "Nematode suppression in soil",
+    "Promotes plant growth via Trichoderma metabolites",
+    "Suitable across all crop stages (pre‑plant to fruit set)",
+    "No withholding period — safe up to harvest"
+  ],
+  "recommended_foods": [
+    "Triple Ten™ – provides soluble P, Fe, Mo, fulvic acids and kelp to support fungal metabolism during application",
+    "Optional: 1 g/L Nutri‑Kelp™ soluble powder in cutting or seedling dips to boost establishment"
+  ],
+  "notes": "Prepare a slurry: mix talc in water, stand 1 hr, sieve before addition to tank. Apply foliar or soil just before irrigation or rain. Avoid direct sunlight. Initial frequent use (every 4 weeks) may be required for population establishment; thereafter apply at growth stage intervals. Include Triple Ten™ for best performance. Do not mix with fungicides, biocides, fumigants. Sanitize spray tank and add microbial last. Wear protective gear when handling.",
+  "description": "Talc‑based blend of Trichoderma spp. that restores microbial balance, suppresses soil pathogens and nematodes, supports root and plant growth throughout lifecycle with no harvest withholding.",
+  "application_rates": {
+    "foliar": "1 kg/ha or 5 g/L for spot spraying; reapply as required every 4 weeks",
+    "soil": "1–2 kg/ha at bed prep or fertigate; repeat 4 weeks later; Tree crops in early spring",
+    "soil_drench": "5 g/L via watering can for small areas",
+    "seedling_treatment": "5 g/L dip just before transplant",
+    "seed_treatment_horticulture": "5 g/kg seed",
+    "seed_treatment_broadacre": "2 kg/tonne seed",
+    "cuttings_treatment": "10 g/L dip before planting"
+  },
+  "link": "https://nutri-tech.com.au/products/tricho-shield",
+  "image": "/src/assets/Nutri-LifeTricho-Shield1kg.webp"
+}
+    ];
+
+    // --- Correct image paths ---
+    products.forEach(product => {
+        const imageName = product.image.split('/').pop();
+        product.image = `../../assets/products/${imageName}`;
+    });
+
+    function getRecommendationsForPest(pest) {
+      const pestClassification = {
+        ascospore: 'fungi',
+        bacterial: 'bacteria',
+        insect: 'insects',
+        lightBrownAppleMoth: 'insects',
+        other: 'insects',
+      };
+      const targetType = pestClassification[pest] || 'fungi';
+
+      return products.filter(product => {
+        if (targetType === 'insects') {
+          return product.control_targets.insects && product.control_targets.insects.length > 0;
+        } 
+        
+        if (targetType === 'fungi' || targetType === 'bacteria') {
+          if (product.control_targets.pathogens.includes(targetType)) {
+            return true;
+          }
+
+          if (product.control_targets.pathogens.length === 0) {
+            const microbeList = product.microbes;
+            for (const microbeName of microbeList) {
+              const microbeDetails = microbes.find(m => m.name === microbeName);
+              if (microbeDetails && microbeDetails.suppresses.includes(targetType)) {
+                return true;
+              }
+            }
+          }
+        }
+
+        return false;
+      });
+    }
   </script>
 </body>
-</html> 
+</html>

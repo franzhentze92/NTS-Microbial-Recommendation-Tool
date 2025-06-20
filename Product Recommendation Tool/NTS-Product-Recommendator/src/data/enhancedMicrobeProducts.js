@@ -404,7 +404,6 @@ export const enhancedMicrobeProducts = [
     "Bio‑balancing probiotic supports healthy rhizosphere",
     "Rescues pathogen‑damaged soils and plants",
     "Suitable across all crop stages (seed to harvest)",
-    "No withholding period – safe up to harvest"
   ],
   "recommended_foods": [
     "LMF™ (Liquid Microbe Food) – 4 L per 200 L brew",
@@ -430,10 +429,10 @@ export const enhancedMicrobeProducts = [
   "microbes": ["Trichoderma harzianum", "Trichoderma lignorum", "Trichoderma koningii"],
   "application": ["Soil", "Foliar", "Seedling treatment", "Seed treatment", "Cuttings treatment"],
   "product_form": "Solid (talc)",
-  "organic_certified": true,
+  "organic_certified": false,
   "control_targets": {
-    "pathogens": ["fungi", "nematodes", "bacteria"],
-    "insects": []
+    "pathogens": ["fungi", "nematodes"],
+    "insects": ["insects", "aphid", "thrip", "whitefly", "beetle", "caterpillar", "mite"]
   },
   "benefits": [
     "Bio‑balancing probiotic supports healthy rhizosphere and phyllosphere",
