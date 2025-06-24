@@ -98,9 +98,9 @@
           <div class="col-md-6 mb-3">
             <h6 class="fw-bold text-success">Setting Up Your Analysis</h6>
             <ol class="text-muted small mb-0">
-              <li><strong>Select Farm/Paddock:</strong> Choose your target farm and paddock from the dropdown menus.</li>
-              <li><strong>Choose Pest/Disease:</strong> Select the specific pest or disease you want to monitor.</li>
-              <li><strong>Set Biofix Date:</strong> <span class="text-success fw-bold">CRITICAL</span> - Enter the date when pest activity first began. This is the starting point for all GDD calculations. Biofix guidance is provided in the "About the Model" section once a pest is selected.</li>
+              <li><strong>Select Farm/Paddock:</strong> Choose your target farm and paddock from the dropdown menus (currently shows Yandina Farm).</li>
+              <li><strong>Choose Pest/Disease:</strong> Select the specific pest or disease you want to monitor (Apple Scab or Light Brown Apple Moth).</li>
+              <li><strong>Set Biofix Date:</strong> <span class="text-success fw-bold">CRITICAL</span> - Enter the date when pest activity first began. This is the starting point for all GDD calculations. Click "Apply" to update the analysis.</li>
             </ol>
           </div>
           <div class="col-md-6 mb-3">
@@ -109,50 +109,50 @@
               <li><strong>Current Growth Stage:</strong> Shows exact pest development stage and percentage completion</li>
               <li><strong>GDD Values:</strong> Today's GDD, accumulated GDD, and the GDD range for current stage</li>
               <li><strong>Next Stage:</strong> Predicts when the pest will reach the next development phase</li>
-              <li><strong>Risk Level:</strong> Indicates infection/pest pressure risk based on current conditions</li>
+              <li><strong>Stage-Specific Products:</strong> Each stage shows recommended biological products and reasoning</li>
             </ul>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
             <h6 class="fw-bold text-success">Using the GDD Chart</h6>
-            <p class="text-muted small mb-2">The chart displays accumulated GDD over the selected period. The line shows the total heat accumulation, helping you visualize development trends and predict future stages. Use this to:</p>
+            <p class="text-muted small mb-2">The chart displays both accumulated GDD (red line) and daily GDD (blue line) over the selected period. Use this to:</p>
             <ul class="text-muted small mb-0">
               <li>Track development progress over time</li>
               <li>Identify periods of rapid or slow development</li>
               <li>Plan treatments based on predicted stage transitions</li>
-              <li>Compare current year to historical patterns</li>
+              <li>Visualize heat accumulation patterns</li>
             </ul>
           </div>
           <div class="col-md-6 mb-3">
             <h6 class="fw-bold text-success">All Growth Stages Overview</h6>
-            <p class="text-muted small mb-2">Expand this section to see the complete pest lifecycle with GDD requirements for each stage. Each stage shows:</p>
+            <p class="text-muted small mb-2">This section shows the complete pest lifecycle with GDD requirements for each stage. Each stage displays:</p>
             <ul class="text-muted small mb-0">
               <li>Stage name and description</li>
               <li>GDD range required for that stage</li>
+              <li>Base and maximum temperature thresholds</li>
               <li>Current status (Upcoming, Current, or Completed)</li>
-              <li>Management implications for each stage</li>
+              <li>Recommended biological products and reasoning</li>
             </ul>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
-            <h6 class="fw-bold text-success">Biological Recommendations</h6>
-            <p class="text-muted small mb-2">Based on your selected pest type, the tool recommends specific biological products that target your pest. Each product card includes:</p>
+            <h6 class="fw-bold text-success">Biological Product Recommendations</h6>
+            <p class="text-muted small mb-2">The tool provides comprehensive biological product recommendations including:</p>
             <ul class="text-muted small mb-0">
-              <li>Active microbial ingredients and their functions</li>
-              <li>Key benefits and mode of action</li>
-              <li>Recommended application rates by crop type</li>
-              <li>Microbial food requirements for optimal performance</li>
-              <li>Application notes and timing considerations</li>
+              <li><strong>Season-wide recommendations:</strong> All products used throughout the season for integral control</li>
+              <li><strong>Stage-specific recommendations:</strong> Products tailored to each growth stage</li>
+              <li><strong>Product details:</strong> Active microbes, benefits, application rates, and microbial food requirements</li>
+              <li><strong>Application guidance:</strong> Detailed notes and timing considerations</li>
             </ul>
           </div>
           <div class="col-md-6 mb-3">
             <h6 class="fw-bold text-success">Making Management Decisions</h6>
             <ul class="text-muted small mb-0">
               <li><strong>Treatment Timing:</strong> Use current stage and next stage predictions to time treatments for maximum efficacy</li>
-              <li><strong>Risk Assessment:</strong> Monitor risk level - high risk may require immediate action</li>
-              <li><strong>Product Selection:</strong> Choose from recommended biological products based on your pest type</li>
+              <li><strong>Product Selection:</strong> Choose from recommended biological products based on current growth stage</li>
+              <li><strong>Microbial Feeding:</strong> Ensure recommended microbial foods are provided throughout the season</li>
               <li><strong>Monitoring Schedule:</strong> Increase monitoring frequency during high-risk periods</li>
               <li><strong>Record Keeping:</strong> Document biofix dates and treatment applications for future reference</li>
             </ul>
@@ -193,7 +193,8 @@
         <option value="lightBrownAppleMoth">Light Brown Apple Moth (Insect)</option>
       </select>
       <label for="biofixFrom" class="form-label mb-0 ms-auto text-success fw-bold">Biofix Date:</label>
-      <input type="date" id="biofixFrom" class="form-control w-auto" value="2025-06-01">
+      <input type="date" id="biofixFrom" class="form-control w-auto" value="2025-01-01">
+      <button id="applyBiofixBtn" class="btn btn-main-green ms-2" type="button">Apply</button>
       <span class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="Click to learn how to set the Biofix date. This is the starting point for GDD calculations and is crucial for accuracy.">
         <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#biofixModal" style="text-decoration: none;">
           <span class="material-icons" style="vertical-align: middle;">info</span>
@@ -209,7 +210,7 @@
           <div id="map" style="height: 350px; width: 100%;"></div>
         </div>
       </div>
-      <!-- Current Growth Stage & Risk Column -->
+      <!-- Current Growth Stage Column -->
       <div class="col-lg-5">
         <div class="card border-0 shadow-sm rounded-4 h-100">
           <div class="card-body">
@@ -217,20 +218,13 @@
               <span class="material-icons highlight me-2">show_chart</span>
               <span class="fw-bold">Current Growth Stage</span>
             </div>
-            <div class="fs-4 fw-bold" id="growthStageTitle">7% Ascospore Maturation</div>
+            <div class="fs-4 fw-bold text-success" id="growthStageTitle">7% Ascospore Maturation</div>
             <hr class="my-2">
-            <div class="mb-1"><b>Today's GDD:</b> <span id="todaysGddValue">15</span></div>
-            <div class="mb-1"><b>Accumulated GDD:</b> <span id="accumulatedGddValue">250</span></div>
-            <div class="mb-1"><b>GDD Range:</b> <span id="growthStageRange">201 - 300</span></div>
-            <div class="mb-1"><b id="growthStagePestLabel">Fungus Ascospore:</b> <span id="growthStageDesc">7% Ascospore Maturation.</span></div>
-            <div class="mt-2"><b>Next Stage:</b> <span id="nextStageDesc">20% Maturation (at 301 GDD)</span></div>
-            <hr class="my-2">
-            <div class="d-flex align-items-center mb-1">
-              <span class="material-icons highlight me-2">warning</span>
-              <span class="fw-bold">Risk Level</span>
-            </div>
-            <div id="riskLevelValue" class="fs-5 fw-bold">Low</div>
-            <p id="riskLevelDesc" class="text-muted small mb-0">Conditions are not favorable for pest/disease activity.</p>
+            <div class="mb-2"><b>Today's GDD:</b> <span id="todaysGddValue" class="text-primary">15</span></div>
+            <div class="mb-2"><b>Accumulated GDD:</b> <span id="accumulatedGddValue" class="text-primary">250</span></div>
+            <div class="mb-2"><b>GDD Range:</b> <span id="growthStageRange">201 - 300</span></div>
+            <div class="mb-2"><b id="growthStagePestLabel">Fungus Ascospore:</b> <span id="growthStageDesc">7% Ascospore Maturation.</span></div>
+            <div class="mt-3"><b>Next Stage:</b> <span id="nextStageDesc">20% Maturation (at 301 GDD)</span></div>
           </div>
         </div>
       </div>
@@ -239,31 +233,23 @@
     <!-- Accumulated GDD Chart -->
     <div class="mb-4">
       <div class="bg-white p-3 rounded-4 shadow-sm">
-        <h6 class="mb-2">Accumulated GDD
+        <h6 class="mb-2">Accumulated & Monthly GDD
           <span class="material-icons info-icon ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Shows the total accumulated Growing Degree Days (GDD) over the selected period, based on the chosen base temperature and biofix date.">info</span>
         </h6>
         <canvas id="accumGddChart" height="120"></canvas>
       </div>
     </div>
 
-    <!-- All Growth Stages Section -->
+    <!-- All Growth Stages -->
     <div class="mb-4">
-      <div class="card border-0 shadow-sm rounded-4">
+      <div class="card border-0 shadow-sm rounded-4 h-100">
         <div class="card-body">
-          <div class="d-flex align-items-center mb-2">
-            <span class="material-icons highlight me-2">list</span>
+          <div class="d-flex align-items-center mb-3">
+            <span class="material-icons highlight me-2">list_alt</span>
             <span class="fw-bold">All Growth Stages</span>
-            <button class="btn btn-sm btn-outline-secondary ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#growthStagesCollapse" aria-expanded="false" aria-controls="growthStagesCollapse">
-              <span class="material-icons expand-icon">expand_more</span>
-            </button>
           </div>
-          <div class="collapse" id="growthStagesCollapse">
-            <div id="allGrowthStages">
-              <!-- Growth stages will be inserted here -->
-            </div>
-            <div id="gddSource" class="mt-3 pt-2 border-top text-muted small">
-              <!-- Source will be inserted here -->
-            </div>
+          <div id="allStagesList" class="list-group list-group-flush">
+            <!-- Stages will be dynamically inserted here -->
           </div>
         </div>
       </div>
@@ -295,7 +281,9 @@
     </div>
 
     <!-- Biological Recommendations -->
-    <div id="biologicalRecommendations" class="mb-4"></div>
+    <div id="biologicalRecommendations" class="mt-4">
+      <!-- Recommendations will be loaded here -->
+    </div>
 
     <!-- Continuous Monitoring Reminder -->
     <div class="mb-4">
@@ -345,70 +333,132 @@
   <script>
     // --- GDD Calculation from real weather data ---
     async function fetchWeatherEOSDA(from, to) {
-      const date_from = from + 'T00:00';
-      const date_to = to + 'T00:00';
-      const res = await fetch('http://localhost:3001/fetch-weather', {
+      // Use the new /fetch-historical-weather endpoint
+      console.log('Fetching weather data from:', from, 'to:', to);
+      const res = await fetch('http://localhost:3001/fetch-historical-weather', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ date_from, date_to })
+        body: JSON.stringify({ date_start: from, date_end: to })
       });
       const data = await res.json();
+      console.log('API response:', data);
       if (!data.success) throw new Error(data.error || 'Failed to fetch EOSDA weather');
+      // The new endpoint returns data.data as an array of { date, temperature_min, temperature_max, ... }
       return data.data;
     }
 
-    // Calculate daily and accumulated GDD from weather data
-    function calculateGDDSeries(weatherData, base, upper) {
+    // Store full year GDD data for today's GDD
+    let fullYearGddData = [];
+
+    // Calculate daily and accumulated GDD from weather data (robust logic)
+    function calculateGDDSeries(weatherData, pestStages, pestDefaultBase, pestDefaultUpper) {
       let accum = 0;
       return weatherData.map(d => {
-        let tmin = d.Temp_air_min;
-        let tmax = d.Temp_air_max;
-
+        // For Apple Scab (ascospore), use per-stage base/upper temp if available
+        let base = pestDefaultBase;
+        let upper = pestDefaultUpper;
+        if (pestStages && pestStages.length > 0) {
+          // Find the stage for this accumulated GDD
+          let tempAccum = accum;
+          let stage = pestStages.find(s => tempAccum >= s.min && tempAccum <= s.max);
+          if (stage && typeof stage.base_temp === 'number' && typeof stage.upper_temp === 'number') {
+            base = stage.base_temp;
+            upper = stage.upper_temp;
+          }
+        }
+        let tmin = d.temperature_min;
+        let tmax = d.temperature_max;
         // Adjust temperatures based on thresholds
         if (tmin < base) tmin = base;
         if (tmax > upper) tmax = upper;
-
         let gdd = ((tmax + tmin) / 2) - base;
         if (gdd < 0) gdd = 0;
         accum += gdd;
         return {
-          date: d.Date,
+          date: d.date,
           gdd: Math.round(accum),
           dailyGdd: Math.round(gdd)
         };
       });
     }
 
+    function processGDDForChart(dailyData) {
+        // Show daily GDD for the filtered range
+        const labels = dailyData.map(d => d.date);
+        const dailyGddData = dailyData.map(d => d.dailyGdd);
+        const cumulativeGddData = dailyData.map(d => d.gdd);
+        return { labels, dailyGddData, cumulativeGddData };
+    }
+
+    function updateAccumGddChart(chartData) {
+        if (!accumGddChart) return;
+        accumGddChart.data.labels = chartData.labels;
+        accumGddChart.data.datasets[0].data = chartData.cumulativeGddData; // Accumulated line
+        accumGddChart.data.datasets[1].data = chartData.dailyGddData;      // Daily GDD line
+        accumGddChart.update();
+    }
+
     let allData = [];
     let accumGddChart;
 
-    function updateAccumGddChart(filteredData) {
-      if (!accumGddChart) return;
-      accumGddChart.data.labels = filteredData.map(d => d.date);
-      accumGddChart.data.datasets[0].data = filteredData.map(d => d.gdd);
-      accumGddChart.update();
-    }
-
     async function loadAndDisplayGDD() {
-      const today = new Date();
-      const prior = new Date();
-      prior.setDate(today.getDate() - 29);
-      const startDate = prior.toISOString().split('T')[0];
-      const endDate = today.toISOString().split('T')[0];
+      const applyBtn = $('#applyBiofixBtn');
+      const pestSelect = $('#pestSelect');
+      const biofixInput = $('#biofixFrom');
+
+      // Disable controls and show loading state
+      applyBtn.prop('disabled', true).text('Loading...');
+      pestSelect.prop('disabled', true);
+      biofixInput.prop('disabled', true);
+
       try {
-        const weather = await fetchWeatherEOSDA(startDate, endDate);
+        const today = new Date();
+        // Set default start date to January 1st, 2025 for full year view
+        const defaultStartDate = '2025-01-01';
+        const startDate = biofixInput.val() ? biofixInput.val() : defaultStartDate;
+        const endDate = today.toISOString().split('T')[0];
         const pest = $('#pestSelect').val();
         const pestData = gddStages[pest];
-        allData = calculateGDDSeries(weather, pestData.base_temp, pestData.upper_temp);
-        updateAccumGddChart(allData);
+        const pestStages = pestData.stages;
+        const pestDefaultBase = (pestData.base_temp !== undefined) ? pestData.base_temp : 0;
+        const pestDefaultUpper = (pestData.upper_temp !== undefined) ? pestData.upper_temp : 30;
+
+        // Fetch full year data for today's GDD (not affected by filter)
+        let fullYearWeather = await fetchWeatherEOSDA(defaultStartDate, endDate);
+        fullYearWeather = fullYearWeather.map(d => ({
+          date: d.date || d.Date,
+          temperature_min: d.temperature_min || d.Temp_air_min,
+          temperature_max: d.temperature_max || d.Temp_air_max,
+          ...d
+        }));
+        fullYearWeather.sort((a, b) => new Date(a.date) - new Date(b.date));
+        fullYearGddData = calculateGDDSeries(fullYearWeather, pestStages, pestDefaultBase, pestDefaultUpper);
+
+        // Fetch filtered data for chart and accumulated GDD
+        let weather = await fetchWeatherEOSDA(startDate, endDate);
+        weather = weather.map(d => ({
+          date: d.date || d.Date,
+          temperature_min: d.temperature_min || d.Temp_air_min,
+          temperature_max: d.temperature_max || d.Temp_air_max,
+          ...d
+        }));
+        weather.sort((a, b) => new Date(a.date) - new Date(b.date));
+        allData = calculateGDDSeries(weather, pestStages, pestDefaultBase, pestDefaultUpper);
+        const chartData = processGDDForChart(allData);
+        updateAccumGddChart(chartData);
+
         // Update growth stage and risk cards
         updateGrowthStageCard();
-        updateRiskLevelCard();
-        updateAllGrowthStages();
-        updateModelInfoCard();
         updateBiologicalRecommendations();
-      } catch (e) {
-        alert('Failed to load weather data: ' + e.message);
+
+      } catch (error) {
+        console.error('Error loading GDD data:', error);
+        alert('Failed to fetch weather data. The API may be busy. Please wait a moment and try again.');
+      } finally {
+        // Re-enable controls
+        applyBtn.prop('disabled', false).text('Apply');
+        pestSelect.prop('disabled', false);
+        biofixInput.prop('disabled', false);
       }
     }
 
@@ -417,9 +467,53 @@
       const ctx = document.getElementById('accumGddChart');
       if (ctx) {
         accumGddChart = new Chart(ctx.getContext('2d'), {
-          type: 'line',
-          data: { labels: [], datasets: [{ label: 'Accumulated GDD', data: [], borderColor: '#8bb439', backgroundColor: 'rgba(139,180,57,0.1)', tension: 0.3, fill: true }] },
-          options: { responsive: true, plugins: { legend: { display: false } }, scales: { x: { display: true, title: { display: true, text: 'Date' } }, y: { display: true, title: { display: true, text: 'Accumulated GDD' } } } }
+            type: 'line', // Base type is line
+            data: {
+                labels: [], 
+                datasets: [{
+                  label: 'Accumulated GDD',
+                  data: [],
+                  borderColor: '#dc3545',
+                  backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                  borderWidth: 2,
+                  fill: false,
+                  yAxisID: 'y'
+                }, {
+                  label: 'Daily GDD',
+                  data: [],
+                  borderColor: '#007bff',
+                  backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                  borderWidth: 2,
+                  fill: false,
+                  yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { 
+                    legend: { display: true },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: { 
+                        display: true,
+                        title: { display: true, text: 'Date' }
+                    },
+                    'y': {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: { display: true, text: 'Accumulated GDD' }
+                    },
+                    'y1': {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: { display: true, text: 'Daily GDD' },
+                        grid: { drawOnChartArea: false },
+                    }
+                }
+            }
         });
       }
       
@@ -509,196 +603,343 @@
         content.slideToggle();
         $(this).text(isVisible ? 'Show Details' : 'Hide Details');
       });
+
+      // Apply button for biofix date
+      $('#applyBiofixBtn').on('click', function() {
+        loadAndDisplayGDD();
+      });
     });
 
-    // --- GDD Growth Stage Mapping (mock) ---
+    // --- GDD Stage Data ---
     const gddStages = {
       ascospore: {
-        base_temp: 0,
-        upper_temp: 30,
-        source_title: 'Internal Model',
-        source_url: null,
-        model_info: {
-          title: 'Apple Scab Ascospore Model',
-          description: 'The Apple Scab Degree Day Model is used to predict the ascospore maturation of the Apple Scab fungus (_Venturia inaequalis_), in order to improve pest management decisions.',
-          biofix_info: 'For best results, the biofix date should be set at bud-break. This is the starting point for GDD accumulation.',
-          treatment_info: 'Insecticide treatments should be timed based on the predicted ascospore maturation stages to prevent primary infection.'
-        },
+        name: "Apple Scab",
+        description: "A fungal disease affecting apples, causing dark, scabby spots.",
         stages: [
-          { min: 0, max: 200, title: 'Dormant', desc: 'No ascospore maturation.' },
-          { min: 201, max: 300, title: '7% Ascospore Maturation', desc: '7% Ascospore Maturation.' },
-          { min: 301, max: 500, title: '20% Ascospore Maturation', desc: '20% Ascospore Maturation.' },
-          { min: 501, max: 800, title: '50% Ascospore Maturation', desc: '50% Ascospore Maturation.' },
-          { min: 801, max: 2000, title: 'Mature', desc: 'Full ascospore maturity.' }
+          {
+            min: 0, max: 0,
+            title: "Dormant Stage",
+            base_temp: 0,
+            upper_temp: 30,
+            desc: "Pre-season sanitation and soil inoculum suppression before ascospore maturation begins.",
+            recommended_products: ["Nutri‑Life BAM™", "Nutri‑Life Platform®"],
+            reasoning: "Nutri‑Life BAM™ accelerates decomposition of leaf litter and organic debris that may harbor overwintering apple scab inoculum. Nutri‑Life Platform® repopulates soil with beneficial microbes, including AMF and Trichoderma, to prepare the rhizosphere and reduce early-season disease pressure."
+          },
+          {
+            min: 1, max: 150,
+            title: "7% Ascospore Maturation",
+            base_temp: 0,
+            upper_temp: 30,
+            desc: "Initial risk of ascospore release during rain.",
+            recommended_products: ["Nutri‑Life B.Sub™", "Nutri‑Life BAM™"],
+            reasoning: "Nutri‑Life B.Sub™ (Bacillus subtilis) triggers induced systemic resistance (ISR) in the plant, strengthening natural defenses before infection can occur. Nutri‑Life BAM™ introduces a blend of beneficial bacteria and yeasts to the leaf surface, creating a competitive microbial environment that discourages pathogen establishment."
+          },
+          {
+            min: 151, max: 300,
+            title: "50% Ascospore Maturation",
+            base_temp: 0,
+            upper_temp: 30,
+            desc: "Significant risk of infection during wetting periods.",
+            recommended_products: ["Nutri‑Life Micro‑Force™", "Nutri‑Life B.Sub™"],
+            reasoning: "Nutri‑Life Micro‑Force™ provides a diverse blend of Bacillus strains that suppress early infections through microbial competition and ISR. Nutri‑Life B.Sub™ reinforces this defense, ensuring both microbial diversity and consistent protection during wetting events."
+          },
+          {
+            min: 301, max: 800,
+            title: "95% Ascospore Maturation",
+            base_temp: 0,
+            upper_temp: 30,
+            desc: "Peak ascospore discharge; highest infection risk.",
+            recommended_products: ["Nutri‑Life Tricho‑Shield™", "Nutri‑Life Micro‑Force™", "Nutri‑Life BAM™"],
+            reasoning: "Nutri‑Life Tricho‑Shield™ (Trichoderma spp.) aggressively outcompetes fungal pathogens at the infection site. Nutri‑Life Micro‑Force™ continues ISR stimulation, while Nutri‑Life BAM™ maintains a strong microbial barrier on leaf surfaces to inhibit further ascospore germination."
+          },
+          {
+            min: 801, max: 1200,
+            title: "Ascospore Depletion",
+            base_temp: 0,
+            upper_temp: 30,
+            desc: "Most ascospores released; infection risk declining.",
+            recommended_products: ["Nutri‑Life Tricho‑Shield™", "Nutri‑Life Platform®"],
+            reasoning: "Nutri‑Life Tricho‑Shield™ helps suppress any lingering fungal activity, especially in lesion sites. Nutri‑Life Platform® enhances root health and systemic resilience with AMF, Bacillus, and Pseudomonas, which improve nutrient uptake and immune function during the transition to lower infection pressure."
+          },
+          {
+            min: 1201, max: 2000,
+            title: "Conidial Stage",
+            base_temp: 0,
+            upper_temp: 30,
+            desc: "Secondary infection from conidia on existing lesions.",
+            recommended_products: ["Nutri‑Life Root‑Guard™", "Nutri‑Life Sudo‑Shield™"],
+            reasoning: "Nutri‑Life Root‑Guard™ introduces beneficial fungi that suppress soil-borne and foliar pathogens by restoring microbial balance. Nutri‑Life Sudo‑Shield™ (Pseudomonas fluorescens) enhances plant immunity, solubilizes key nutrients like silica and phosphate, and mitigates abiotic stresses like heat and drought that can worsen disease severity."
+          },
+          {
+            min: 2001, max: 9999,
+            title: "Season End",
+            base_temp: 0,
+            upper_temp: 30,
+            desc: "Primary infection season is over.",
+            recommended_products: ["Nutri‑Life BAM™", "Nutri‑Life Platform®"],
+            reasoning: "Nutri‑Life BAM™ accelerates the breakdown of infected fallen leaves, reducing the carryover of apple scab spores to the next season. Nutri‑Life Platform® rebuilds beneficial soil microbe populations to improve long-term plant health, nutrient cycling, and disease suppression heading into dormancy."
+          }
         ]
       },
       lightBrownAppleMoth: {
-        base_temp: 7, // 45°F
-        upper_temp: 31, // 88°F
-        source_title: 'Light Brown Apple Moth, Epiphyas postvittana (Walker), Phenological Model Analysis by Len Coop, OSU',
-        source_url: 'https://blog.pestprophet.com/how-to-use-the-light-brown-apple-moth-growing-degree-day-model/',
-        model_info: {
-          title: 'Light Brown Apple Moth Growing Degree Day Model',
-          description: 'The Light Brown Apple Moth (_Epiphyas postvittana_) is an important pest on grapes in Australia and New Zealand and is an invasive species in California. There can be 3-4 generations in a year, depending on the weather.',
-          biofix_info: 'The biofix is the first date of consistent, sustained adult moth catches using pheromone traps in the orchard or vineyard. Traps should be placed in early spring, or late winter, and checked on a regular basis. Once adult moths have been trapped for a few weeks in a row, the date of the first catch should be used as the biofix.',
-          treatment_info: 'Insecticide treatments targeting 1st or 2nd generation larvae are typically the best way to control populations. The first egg hatch will peak at approximately 390 GDD (F) and the larval stage will be between 756 and 1400 GDD (F). The optimum timing for a single insecticide treatment is approximately 1,100 GDD (F) after the adult moth catch.'
-        },
+        name: "Light Brown Apple Moth",
+        description: "The light brown apple moth is a major pest of apples and pears. GDD is used to time insecticide applications.",
+        base_temp: 7.5,
+        upper_temp: 31,
         stages: [
-          { min: 0, max: 419, title: 'Egg Hatch to Larval Emergence', desc: 'First egg hatch peaks around 217 GDD (C). Larvae begin emerging.' },
-          { min: 420, max: 778, title: 'Larval Stage (Treatment Window)', desc: 'The main larval stage. Optimum timing for insecticide treatment is around 611 GDD (C).' },
-          { min: 779, max: 3000, title: 'Pupation & Adult Flight', desc: 'After 778 GDD (C), larvae begin to pupate and the next generation of adults emerge.' }
+          {
+            min: 0, max: 0,
+            title: "Dormant Stage",
+            base_temp: 7.5,
+            upper_temp: 31,
+            desc: "Pre-season sanitation and soil health restoration before first emergence.",
+            recommended_products: ["Nutri‑Life BAM™", "Nutri‑Life Platform®"],
+            reasoning: "BAM™ decomposes overwintering debris and microbial litter, while Platform® improves rhizosphere resilience to prepare for pest and disease season."
+          },
+          {
+            min: 1, max: 390,
+            title: "1st Egg Hatch",
+            base_temp: 7.5,
+            upper_temp: 31,
+            desc: "First-generation larvae begin to hatch and feed on leaves and buds.",
+            recommended_products: ["Nutri‑Life Myco‑Force™", "Nutri‑Life Tricho‑Shield™"],
+            reasoning: "Myco‑Force™ entomopathogens target young larvae through cuticle infection, reducing populations early. Tricho‑Shield™ protects against opportunistic pathogens during tissue damage and feeding."
+          },
+          {
+            min: 391, max: 800,
+            title: "Peak Larval Feeding",
+            base_temp: 7.5,
+            upper_temp: 31,
+            desc: "Larvae are most active and damaging during this stage. High-risk feeding on leaves and fruitlets.",
+            recommended_products: ["Nutri‑Life Myco‑Force™", "Nutri‑Life Tricho‑Shield™", "Nutri‑Life Micro‑Force™"],
+            reasoning: "Myco‑Force™ continues to infect larvae with fungi. Tricho‑Shield™ supports wound protection. Micro‑Force™ primes plant immunity and aids stress recovery from larval damage."
+          },
+          {
+            min: 801, max: 1000,
+            title: "Pupal Transition",
+            base_temp: 7.5,
+            upper_temp: 31,
+            desc: "Larvae pupate; adults will soon emerge. Time to break residual populations.",
+            recommended_products: ["Nutri‑Life Myco‑Force™", "Nutri‑Life Root‑Guard™"],
+            reasoning: "Apply Myco‑Force™ to kill any exposed larvae or pupae. Root‑Guard™ restores beneficial fungi and enhances root-zone defense after feeding damage."
+          },
+          {
+            min: 1001, max: 9999,
+            title: "Seasonal Overlap (2nd Generation Onward)",
+            base_temp: 7.5,
+            upper_temp: 31,
+            desc: "Second and third LBAM generations may emerge depending on climate. Focus on full-coverage prevention.",
+            recommended_products: ["Nutri‑Life BAM™", "Nutri‑Life Platform®", "Nutri‑Life Tricho‑Shield™"],
+            reasoning: "BAM™ helps clean up egg webs and larval frass. Platform® and Tricho‑Shield™ reinforce overall plant and soil defense through multi-species microbial diversity."
+          }
+        ]
+      },
+      codling_moth: {
+        name: "Codling Moth",
+        description: "The codling moth is a major pest of apples and pears. GDD is used to time insecticide applications.",
+        base_temp: 10,
+        upper_temp: 30,
+        stages: [
+          { min: 0, max: 250, title: "Biofix", desc: "First sustained moth flight.", risk: "Low" },
+          { min: 251, max: 450, title: "Egg Laying", desc: "Adults begin laying eggs.", risk: "Medium" },
+          { min: 451, max: 750, title: "Egg Hatch", desc: "Eggs begin to hatch.", risk: "High" },
+          { min: 751, max: 1000, title: "Larval Emergence", desc: "Larvae emerge and enter fruit.", risk: "High" },
+          { min: 1001, max: 1250, title: "Pupation", desc: "Larvae pupate.", risk: "Medium" },
+          { min: 1251, max: 9999, title: "Second Generation", desc: "Second generation of moths emerge.", risk: "High" }
+        ]
+      },
+      apple_scab: {
+        name: "Apple Scab",
+        description: "A fungal disease affecting apples, causing dark, scabby spots.",
+        base_temp: 0,
+        upper_temp: 30,
+        stages: [
+          { min: 1, max: 150, title: "7% Ascospore Maturation", desc: "Initial risk of ascospore release during rain.", risk: "Low" },
+          { min: 151, max: 300, title: "50% Ascospore Maturation", desc: "Significant risk of infection during wetting periods.", risk: "Medium" },
+          { min: 301, max: 800, title: "95% Ascospore Maturation", desc: "Peak ascospore discharge; highest infection risk.", risk: "High" },
+          { min: 801, max: 1200, title: "Ascospore Depletion", desc: "Most ascospores have been released; risk declining.", risk: "Medium" },
+          { min: 1201, max: 2000, title: "Conidial Stage", desc: "Secondary infection from conidia on existing lesions.", risk: "High" },
+          { min: 2001, max: 9999, title: "Season End", desc: "Primary infection season is over.", risk: "Low" }
+        ]
+      },
+      fire_blight: {
+        name: "Fire Blight",
+        description: "A destructive bacterial disease of apples and pears.",
+        base_temp: 12.8,
+        upper_temp: 30,
+        stages: [
+          { min: 50, max: 100, title: "Infection Risk", desc: "Risk of blossom blight infection when temperatures are favorable.", risk: "Medium" },
+          { min: 101, max: 200, title: "Shoot Blight", desc: "Infection spreads to shoots, causing dieback.", risk: "High" },
+          { min: 201, max: 9999, title: "Canker Expansion", desc: "Cankers expand on branches and trunk.", risk: "High" }
         ]
       }
     };
 
+    // --- GDD Growth Stage Card Update ---
     function updateGrowthStageCard() {
-      const pest = $('#pestSelect').val();
-      const pestData = gddStages[pest];
-      const currentGdd = allData.length > 0 ? allData[allData.length - 1].gdd : 0;
-      const todaysGdd = allData.length > 0 ? allData[allData.length - 1].dailyGdd : 0;
-      
-      let currentStage = pestData.stages.find(s => currentGdd >= s.min && currentGdd <= s.max);
-      if (!currentStage) {
-        currentStage = { title: 'N/A', desc: 'No data available.', min: 'N/A', max: 'N/A' };
+      if (!allData || allData.length === 0) {
+        console.log("No data available to update growth stage card.");
+        return;
       }
 
-      const currentIndex = pestData.stages.findIndex(s => s.title === currentStage.title);
-      let nextStage = null;
-      if (currentIndex > -1 && currentIndex < pestData.stages.length - 1) {
-        nextStage = pestData.stages[currentIndex + 1];
+      // Find the data point for the real current date (today) from fullYearGddData
+      const todayStr = new Date().toISOString().split('T')[0];
+      let todaysGdd = 'N/A';
+      if (fullYearGddData && fullYearGddData.length > 0) {
+        const todayDataPoint = fullYearGddData.find(d => d.date === todayStr);
+        if (todayDataPoint) {
+          todaysGdd = todayDataPoint.dailyGdd;
+        }
+      }
+      const lastDataPoint = allData[allData.length - 1];
+      const totalAccumGdd = lastDataPoint.gdd;
+
+      const pestKey = $('#pestSelect').val();
+      const pestData = gddStages[pestKey];
+      if (!pestData) {
+        console.error("Invalid pest key selected:", pestKey);
+        return;
+      }
+      const pestStages = pestData.stages;
+
+      let currentStage = null;
+      for (const stage of pestStages) {
+        if (totalAccumGdd >= stage.min && totalAccumGdd <= stage.max) {
+          currentStage = stage;
+          break;
+        }
       }
 
-      let nextStageDesc = 'Final stage reached.';
-      if (nextStage) {
-        nextStageDesc = `${nextStage.title} (at ${nextStage.min} GDD)`;
+      // --- Update GDD values in the card ---
+      $('#todaysGddValue').text(todaysGdd !== undefined ? todaysGdd : 'N/A');
+      $('#accumulatedGddValue').text(Math.round(totalAccumGdd));
+
+      // --- Update Card Content based on Stage ---
+      const growthStageTitle = $('#growthStageTitle');
+      const growthStageRange = $('#growthStageRange');
+      const growthStageDesc = $('#growthStageDesc');
+      const nextStageContainer = $('#nextStageContainer');
+      const nextStageDesc = $('#nextStageDesc');
+
+      if (currentStage) {
+        growthStageTitle.text(currentStage.title);
+        growthStageRange.text(`${currentStage.min} - ${currentStage.max}`);
+        // Add base/max temp info
+        let tempInfo = '';
+        if (typeof currentStage.base_temp === 'number' && typeof currentStage.upper_temp === 'number') {
+          tempInfo = `<div class='small text-muted mb-1'>Base Temp: ${currentStage.base_temp}°C, Max Temp: ${currentStage.upper_temp}°C</div>`;
+        }
+        // Add recommended products and reasoning for current stage
+        let recProducts = '';
+        let reasoning = '';
+        if (currentStage.recommended_products) {
+          recProducts = `<div><b>Recommended Products:</b> <span class='text-success'>${currentStage.recommended_products.join(', ')}</span></div>`;
+        }
+        if (currentStage.reasoning) {
+          reasoning = `<div class='small fst-italic text-muted' style='margin-top: 0.25rem;'>${currentStage.reasoning}</div>`;
+        }
+        growthStageDesc.html(`${tempInfo}${currentStage.desc}${recProducts}${reasoning}`);
+
+        const currentIndex = pestStages.indexOf(currentStage);
+        if (currentIndex < pestStages.length - 1) {
+          const nextStage = pestStages[currentIndex + 1];
+          nextStageDesc.text(`${nextStage.title} (at ${nextStage.min} GDD)`);
+          nextStageContainer.show();
+        } else {
+          nextStageDesc.text("");
+          nextStageContainer.hide();
+        }
+      } else {
+        nextStageDesc.text("");
+        nextStageContainer.hide();
+        if (totalAccumGdd > pestStages[pestStages.length - 1].max) {
+          growthStageTitle.text('All Stages Completed');
+          growthStageRange.text(`> ${pestStages[pestStages.length - 1].max}`);
+          growthStageDesc.html(''); // Clear the description to avoid showing stale data
+        } else {
+          growthStageTitle.text('No Stage Yet');
+          growthStageRange.text(`< ${pestStages[0].min}`);
+          growthStageDesc.html('Waiting for sufficient GDD accumulation.');
+        }
       }
       
-      $('#growthStageTitle').text(currentStage.title);
-      $('#todaysGddValue').text(todaysGdd || 'N/A');
-      $('#accumulatedGddValue').text(currentGdd || 'N/A');
-      $('#growthStageRange').text(`${currentStage.min} - ${currentStage.max}`);
-      $('#growthStagePestLabel').html(`<b>${$('#pestSelect option:selected').text().split(' (')[0]}:</b>`);
-      $('#growthStageDesc').text(currentStage.desc);
-      $('#nextStageDesc').text(nextStageDesc);
-    }
-
-    function updateAllGrowthStages() {
-      const pest = $('#pestSelect').val();
-      const pestData = gddStages[pest];
-      const currentGdd = allData[allData.length - 1]?.gdd || 0;
-      const stages = pestData.stages;
-      
+      // --- Update All Growth Stages List ---
       let html = '';
-      stages.forEach((stage, index) => {
+      pestStages.forEach((stage) => {
         let status = '';
-        let statusClass = '';
-        
-        if (currentGdd < stage.min) {
-          status = 'Upcoming';
-          statusClass = 'text-muted';
-        } else if (currentGdd >= stage.min && currentGdd <= stage.max) {
+        let statusClass = 'text-muted';
+        if (totalAccumGdd >= stage.min && totalAccumGdd <= stage.max) {
           status = 'Current';
           statusClass = 'text-success fw-bold';
-        } else {
+        } else if (totalAccumGdd > stage.max) {
           status = 'Completed';
           statusClass = 'text-secondary';
+        } else {
+          status = 'Upcoming';
         }
-        
+        // Add base/max temp info for each stage
+        let tempInfo = '';
+        if (typeof stage.base_temp === 'number' && typeof stage.upper_temp === 'number') {
+          tempInfo = `<div class='small text-muted mb-1'>Base Temp: ${stage.base_temp}°C, Max Temp: ${stage.upper_temp}°C</div>`;
+        }
+        // Add recommended products and reasoning if present
+        let recProducts = '';
+        let reasoning = '';
+        if (stage.recommended_products) {
+          recProducts = `<div><b>Recommended Products:</b> <span class='text-success'>${stage.recommended_products.join(', ')}</span></div>`;
+        }
+        if (stage.reasoning) {
+          reasoning = `<div class='small fst-italic text-muted' style='margin-top: 0.25rem;'>${stage.reasoning}</div>`;
+        }
         html += `
-          <div class="border-bottom pb-2 mb-2 ${currentGdd >= stage.min && currentGdd <= stage.max ? 'bg-light rounded p-2' : ''}">
-            <div class="d-flex justify-content-between align-items-start">
-              <div>
-                <h6 class="mb-1">${stage.title}</h6>
-                <p class="mb-1 text-muted small">${stage.desc}</p>
-                <span class="badge bg-secondary">GDD: ${stage.min} - ${stage.max}</span>
-              </div>
-              <span class="badge ${statusClass === 'text-success fw-bold' ? 'bg-success' : statusClass === 'text-secondary' ? 'bg-secondary' : 'bg-light text-dark'}">${status}</span>
+          <div class="list-group-item ${status === 'Current' ? 'list-group-item-success' : ''}">
+            <div class="d-flex w-100 justify-content-between">
+              <h6 class="mb-1">${stage.title}</h6>
+              <small class="${statusClass}">${stage.min} - ${stage.max} GDD</small>
             </div>
+            ${tempInfo}
+            <p class="mb-1 small">${stage.desc}</p>
+            ${recProducts}
+            ${reasoning}
+            <small class="fw-bold ${statusClass}">${status}</small>
           </div>
         `;
       });
-      
-      $('#allGrowthStages').html(html);
-
-      // Update the source information
-      const sourceDiv = $('#gddSource');
-      if (pestData.source_url && pestData.source_title) {
-        sourceDiv.html(`Source: <a href="${pestData.source_url}" target="_blank" rel="noopener noreferrer">${pestData.source_title}</a>`);
-      } else if (pestData.source_title) {
-        sourceDiv.html(`Source: ${pestData.source_title}`);
-      } else {
-        sourceDiv.html('');
-      }
+      $('#allStagesList').html(html);
     }
 
-    // Listen to filter changes
-    $('#pestSelect').on('change', function() {
-      updateGrowthStageCard();
-      updateAllGrowthStages();
-      updateModelInfoCard();
-      // Need to re-calculate GDD series with new pest thresholds
-      loadAndDisplayGDD();
-    });
-
-    // Also update after mock GDD values are set
-    $(function() {
-      updateGrowthStageCard();
-      updateAllGrowthStages();
-      updateModelInfoCard();
-    });
-
-    function updateModelInfoCard() {
-      const pest = $('#pestSelect').val();
-      const pestData = gddStages[pest];
-      const modelInfo = pestData.model_info;
-
-      if (modelInfo) {
-        $('#modelInfoTitle').text(modelInfo.title);
-        $('#modelInfoDescription').text(modelInfo.description);
-        $('#modelInfoBiofix').text(modelInfo.biofix_info);
-        $('#modelInfoTreatment').text(modelInfo.treatment_info);
-        $('#modelInfoCard').show();
-      } else {
-        $('#modelInfoCard').hide();
-      }
-    }
-
-    // --- Risk Level logic (general) ---
-    function updateRiskLevelCard() {
-      const pest = $('#pestSelect').val();
-      const gdd = allData[allData.length - 1]?.gdd || 0;
-      let risk = 'Low', desc = 'Conditions are not favorable for pest/disease activity.';
-      
-      // General risk assessment based on GDD accumulation
-      if (gdd > 1000) { 
-        risk = 'High'; 
-        desc = 'High risk for pest/disease development and population growth. Consider immediate management actions.'; 
-      }
-      else if (gdd > 500) { 
-        risk = 'Moderate'; 
-        desc = 'Moderate risk for pest/disease activity. Monitor closely and prepare for management if needed.'; 
-      }
-      else { 
-        risk = 'Low'; 
-        desc = 'Conditions are not favorable for pest/disease activity. Continue monitoring.'; 
-      }
-      
-      $('#riskLevelValue').text(risk);
-      $('#riskLevelDesc').text(desc);
-    }
-
-    // --- Biological Recommendations logic ---
+    // --- Biological Product Recommendations ---
     function updateBiologicalRecommendations() {
         const pest = $('#pestSelect').val();
-        const recommendations = getRecommendationsForPest(pest);
+        const pestData = gddStages[pest];
         const recommendationsContainer = $('#biologicalRecommendations');
+
+        // Collect all recommended products from all growth stages
+        const recommendedProductNames = new Set();
+        if (pestData && pestData.stages) {
+            pestData.stages.forEach(stage => {
+                if (stage.recommended_products) {
+                    stage.recommended_products.forEach(productName => {
+                        recommendedProductNames.add(productName);
+                    });
+                }
+            });
+        }
+
+        // Get the full product details for the recommended products
+        const recommendations = products.filter(product => 
+            recommendedProductNames.has(product.product_name)
+        );
 
         let html = `
     <div class="card border-0 shadow-sm rounded-4 mb-3">
         <div class="card-body">
         <div class="d-flex align-items-center mb-2">
             <span class="material-icons highlight me-2">eco</span>
-            <span class="fw-bold">Biological Recommendations</span>
+            <span class="fw-bold">Product Recommendations for the Entire Season</span>
+        </div>
+        <div class="text-muted small mb-2 ms-4">
+            <em>Note: Each growth stage will display its own recommended product combination below the stage description. The combination of all products throughout the season provides integral control - this comprehensive approach is essential for maximum efficacy. <strong>Very important:</strong> Don't forget to feed the microbes throughout the season with recommended microbial foods for optimal performance!</em>
         </div>
         </div>
     </div>`;
@@ -734,7 +975,7 @@
                             <div style="background: #edf7ed; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;">
                                 <strong style="color: #2e7d32;">Key Benefits:</strong>
                                 <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem; color: #444;">
-                                    ${product.benefits.slice(0, 5).map(benefit => `<li style="margin-bottom: 0.3rem;">${benefit}</li>`).join('')}
+                                    ${product.benefits.map(benefit => `<li style="margin-bottom: 0.25rem;">${benefit}</li>`).join('')}
                                 </ul>
                             </div>` : ''}
                             
@@ -792,11 +1033,9 @@
     }
 
     $('#pestSelect').on('change', function() {
-      updateRiskLevelCard();
       updateBiologicalRecommendations();
     });
     $(function() {
-      updateRiskLevelCard();
       updateBiologicalRecommendations();
     });
 
@@ -858,7 +1097,10 @@
     "Reduces reliance on chemical nutrients and pesticides"
   ],
   "recommended_foods": [
-    "Activator powder included with product – protein precursors to boost metabolite production"
+    "Activator powder included with product – protein precursors to boost metabolite production",
+    "LMF™ (Liquid Microbe Food) – 1 L per 100 L brew",
+    "Dominate‑B™ – 1 L per 100 L brew (to promote bacterial dominance)",
+    "Path‑X™ – 100 mL per 10 L to sanitize brewing equipment"
   ],
   "notes": "Mix B.Sub™ with Activator powder in clean vessel per instructions. For foliar, soil or seedling treatment. Do not mix with fungicides or fumigants; add last to tank.",
   "description": "Selected, vigorous strains of Bacillus subtilis with Activator technology. Powerful probiotic that balances the rhizosphere, promotes growth, and enhances natural plant defenses via phytoalexin stimulation.",
@@ -1282,7 +1524,7 @@
     "No withholding period — safe up to harvest"
   ],
   "recommended_foods": [
-    "Triple Ten™ – provides soluble P, Fe, Mo, fulvic acids and kelp to support fungal metabolism during application",
+    "Triple Ten™ – provides soluble P, Fe, Mo, fulvic acid and kelp to support fungal metabolism during application",
     "Optional: 1 g/L Nutri‑Kelp™ soluble powder in cutting or seedling dips to boost establishment"
   ],
   "notes": "Prepare a slurry: mix talc in water, stand 1 hr, sieve before addition to tank. Apply foliar or soil just before irrigation or rain. Avoid direct sunlight. Initial frequent use (every 4 weeks) may be required for population establishment; thereafter apply at growth stage intervals. Include Triple Ten™ for best performance. Do not mix with fungicides, biocides, fumigants. Sanitize spray tank and add microbial last. Wear protective gear when handling.",

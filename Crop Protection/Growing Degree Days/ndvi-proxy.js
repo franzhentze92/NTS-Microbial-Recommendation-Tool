@@ -1,6 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = 3001;
@@ -11,6 +12,12 @@ const EOSDA_BASE_URL = 'https://api-connect.eos.com';
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname))); // Serve static files
+
+// Default route to serve gdd-bootstrap.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'gdd-bootstrap.html'));
+});
 
 // Test endpoint to verify proxy is running
 app.get('/test', (req, res) => {
@@ -112,10 +119,13 @@ app.post('/fetch-historical-weather', async (req, res) => {
                 [152.9148355104133, -26.49630785386763]
             ]]
         };
-        const date_from = req.body.date_from || "2024-06-10T00:00";
-        const date_to = req.body.date_to || "2024-06-17T00:00";
+        
+        // Accept both date_from/date_to and date_start/date_end for compatibility
+        const date_from = req.body.date_from || req.body.date_start || "2024-06-10T00:00";
+        const date_to = req.body.date_to || req.body.date_end || "2024-06-17T00:00";
 
-        const apiUrl = `${EOSDA_BASE_URL}/api/forecast/weather/historical/?api_key=${EOSDA_API_KEY}`;
+        // Use the same API structure as /fetch-weather but for historical data
+        const apiUrl = `${EOSDA_BASE_URL}/api/forecast/weather/forecast/?api_key=${EOSDA_API_KEY}`;
         const payload = {
             geometry,
             date_from,
@@ -138,7 +148,8 @@ app.post('/fetch-historical-weather', async (req, res) => {
             data = JSON.parse(text);
         } catch (e) {
             console.error('EOSDA Historical Weather API returned non-JSON:', text);
-            return res.status(500).json({
+            return res.status(502).json({
+                success: false,
                 error: 'EOSDA Historical Weather API returned non-JSON',
                 raw: text
             });
@@ -147,6 +158,7 @@ app.post('/fetch-historical-weather', async (req, res) => {
         if (!response.ok) {
             console.error('EOSDA Historical Weather API error:', response.status, data);
             return res.status(response.status).json({
+                success: false,
                 error: 'EOSDA Historical Weather API error',
                 status: response.status,
                 details: data
@@ -156,7 +168,8 @@ app.post('/fetch-historical-weather', async (req, res) => {
         console.log('EOSDA Historical Weather API response received:', data);
         res.json({
             success: true,
-            data: data
+            data: data,
+            source: 'historical_weather_api'
         });
     } catch (error) {
         console.error('Proxy error:', error);
